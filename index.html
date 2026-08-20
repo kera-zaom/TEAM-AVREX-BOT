@@ -2,9 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>الخوارزمي | مع المستر أمير مفيش مستحيل</title>
@@ -53,9 +51,9 @@ button{
 }
 
 
-/* =====================================================
+/* =========================
    CONTAINER
-===================================================== */
+========================= */
 
 .container{
     width:min(1180px,calc(100% - 30px));
@@ -63,9 +61,9 @@ button{
 }
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header{
     position:fixed;
@@ -73,41 +71,70 @@ header{
     right:0;
     left:0;
     z-index:1000;
+
     background:rgba(7,7,11,.55);
+
     backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.06);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+
     transition:.3s;
 }
 
 header.scrolled{
     background:rgba(7,7,11,.94);
-    box-shadow:0 15px 50px rgba(0,0,0,.4);
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.4);
 }
 
 .nav{
     min-height:78px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
 }
 
 .brand{
     display:flex;
+
     align-items:center;
+
     gap:10px;
 }
 
 .logo{
     width:47px;
     height:47px;
+
     display:grid;
+
     place-items:center;
+
     border-radius:15px;
+
     font-size:23px;
+
     font-weight:900;
-    background:linear-gradient(135deg,#8d5cff,#365ee8);
-    box-shadow:0 10px 35px rgba(113,73,245,.3);
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d5cff,
+            #365ee8
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(113,73,245,.3);
 }
 
 .brand-text strong{
@@ -122,7 +149,9 @@ header.scrolled{
 
 .nav-links{
     display:flex;
+
     align-items:center;
+
     gap:27px;
 }
 
@@ -138,53 +167,89 @@ header.scrolled{
 
 .nav-actions{
     display:flex;
+
     align-items:center;
+
     gap:9px;
 }
 
 .login-btn{
     padding:10px 16px;
+
     border-radius:12px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
     font-size:11px;
+
     transition:.25s;
 }
 
 .login-btn:hover{
-    background:rgba(255,255,255,.1);
+    background:
+        rgba(255,255,255,.1);
+
     transform:translateY(-2px);
 }
 
 .mobile-menu{
     display:none;
+
     width:42px;
     height:42px;
+
     border-radius:12px;
+
     color:#fff;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
     font-size:20px;
+
     cursor:pointer;
 }
 
 
-/* =====================================================
+/* =========================
    MOBILE MENU
-===================================================== */
+========================= */
 
 .mobile-nav{
     display:none;
+
     position:fixed;
+
     top:88px;
+
     right:15px;
     left:15px;
+
     z-index:999;
+
     padding:10px;
+
     border-radius:17px;
-    background:rgba(12,12,18,.97);
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+    background:
+        rgba(12,12,18,.97);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.5);
 }
 
 .mobile-nav.active{
@@ -193,92 +258,152 @@ header.scrolled{
 
 .mobile-nav a{
     display:block;
+
     padding:13px;
+
     border-radius:10px;
+
     color:#aaaab5;
+
     font-size:12px;
 }
 
 .mobile-nav a:hover{
     color:#fff;
-    background:rgba(255,255,255,.05);
+
+    background:
+        rgba(255,255,255,.05);
 }
 
 
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
 .hero{
     position:relative;
-    min-height:850px;
-    padding:130px 0 80px;
+
+    min-height:820px;
+
+    padding:125px 0 70px;
+
     display:flex;
+
     align-items:center;
+
     overflow:hidden;
 }
 
 .hero::before{
     content:"";
+
     position:absolute;
+
     width:750px;
     height:750px;
-    left:-300px;
+
+    left:-350px;
+
     top:50%;
-    transform:translateY(-50%);
+
+    transform:
+        translateY(-50%);
+
     border-radius:50%;
+
     background:
         radial-gradient(
             circle,
-            rgba(112,72,245,.23),
+            rgba(112,72,245,.24),
             transparent 68%
         );
+
     filter:blur(25px);
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
+
     width:500px;
     height:500px;
+
     right:-250px;
     top:-150px;
+
     border-radius:50%;
+
     background:
         radial-gradient(
             circle,
             rgba(45,80,220,.13),
             transparent 70%
         );
+
     filter:blur(20px);
 }
 
+
+/* =========================
+   HERO CONTENT
+   الكلام ناحية اليمين
+========================= */
+
 .hero-content{
+
     position:relative;
-    z-index:10;
-    width:47%;
-    margin-right:auto;
+
+    z-index:20;
+
+    width:50%;
+
+    margin-right:0;
+
+    margin-left:auto;
+
+    text-align:right;
 }
 
 .badge{
+
     display:inline-flex;
+
     align-items:center;
+
     gap:8px;
+
     padding:8px 13px;
+
     margin-bottom:22px;
+
     border-radius:100px;
+
     color:#c5b5ff;
+
     font-size:10px;
-    background:rgba(115,73,245,.1);
-    border:1px solid rgba(139,105,255,.22);
+
+    background:
+        rgba(115,73,245,.1);
+
+    border:
+        1px solid
+        rgba(139,105,255,.22);
 }
 
 .badge-dot{
+
     width:7px;
     height:7px;
+
     border-radius:50%;
+
     background:#956fff;
-    box-shadow:0 0 18px #956fff;
+
+    box-shadow:
+        0 0 18px
+        #956fff;
+
     animation:pulse 1.8s infinite;
 }
 
@@ -297,14 +422,21 @@ header.scrolled{
 }
 
 .hero h1{
-    font-size:clamp(45px,6vw,76px);
+
+    font-size:
+        clamp(45px,6vw,76px);
+
     line-height:1.08;
+
     font-weight:900;
+
     letter-spacing:-2px;
+
     margin-bottom:20px;
 }
 
 .hero-highlight{
+
     background:
         linear-gradient(
             90deg,
@@ -314,15 +446,26 @@ header.scrolled{
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
+
     color:transparent;
 }
 
 .hero-description{
+
     color:#a0a0ac;
+
     font-size:15px;
+
     line-height:2;
+
     max-width:620px;
+
+    margin-right:0;
+
+    margin-left:auto;
+
     margin-bottom:28px;
 }
 
@@ -331,78 +474,118 @@ header.scrolled{
 }
 
 .hero-buttons{
+
     display:flex;
+
+    justify-content:flex-start;
+
     gap:10px;
+
     flex-wrap:wrap;
 }
 
 .primary-btn{
+
     min-height:51px;
+
     padding:0 23px;
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
+
     gap:10px;
+
     border-radius:14px;
+
     color:#fff;
+
     font-size:12px;
+
     font-weight:800;
+
     background:
         linear-gradient(
             135deg,
             #8257f5,
             #365ee8
         );
+
     box-shadow:
         0 15px 40px
         rgba(91,65,220,.3);
+
     transition:.3s;
+
     cursor:pointer;
 }
 
 .primary-btn:hover{
+
     transform:translateY(-4px);
+
     box-shadow:
         0 20px 55px
         rgba(91,65,220,.45);
 }
 
 .secondary-btn{
+
     min-height:51px;
+
     padding:0 22px;
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
+
     border-radius:14px;
+
     color:#dddde5;
+
     font-size:12px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
     transition:.3s;
 }
 
 .secondary-btn:hover{
-    background:rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.08);
+
     transform:translateY(-3px);
 }
 
 
 /* =====================================================
    TEACHER HERO
-   الصورة ناحية + الكلام جنبها
+   الصورة ناحية الشمال
+   الكلام منفصل ناحية اليمين
 ===================================================== */
 
 .teacher-hero{
 
     position:absolute;
 
-    left:0;
+    left:-20px;
 
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+        translateY(-50%);
 
-    width:650px;
+    width:620px;
 
     height:620px;
 
@@ -416,18 +599,16 @@ header.scrolled{
 }
 
 
-/* الإضاءة الخلفية */
+/* الإضاءة */
 
 .teacher-glow{
 
     position:absolute;
 
-    width:530px;
+    width:540px;
+    height:540px;
 
-    height:530px;
-
-    left:20px;
-
+    left:30px;
     top:40px;
 
     border-radius:50%;
@@ -435,11 +616,11 @@ header.scrolled{
     background:
         radial-gradient(
             circle,
-            rgba(116,73,245,.34),
+            rgba(116,73,245,.30),
             transparent 68%
         );
 
-    filter:blur(20px);
+    filter:blur(25px);
 
     animation:
         glowMove 5s ease-in-out infinite;
@@ -452,9 +633,8 @@ header.scrolled{
     }
 
     50%{
-        transform:scale(1.09);
+        transform:scale(1.08);
     }
-
 }
 
 
@@ -464,13 +644,11 @@ header.scrolled{
 
     position:absolute;
 
-    width:520px;
+    width:530px;
+    height:530px;
 
-    height:520px;
-
-    left:25px;
-
-    top:50px;
+    left:15px;
+    top:45px;
 
     border-radius:50%;
 
@@ -489,13 +667,11 @@ header.scrolled{
     position:absolute;
 
     width:10px;
-
     height:10px;
 
     border-radius:50%;
 
     top:12%;
-
     right:15%;
 
     background:#a98cff;
@@ -514,66 +690,27 @@ header.scrolled{
     to{
         transform:rotate(360deg);
     }
-
 }
 
 
 /* =====================================================
-   الصورة والكلام جنب بعض
-===================================================== */
-
-.teacher-layout{
-
-    position:relative;
-
-    z-index:10;
-
-    width:620px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:25px;
-
-    animation:
-        floatTeacher 4s ease-in-out infinite;
-}
-
-@keyframes floatTeacher{
-
-    0%,100%{
-        transform:
-            translateY(0)
-            rotate(0deg);
-    }
-
-    50%{
-        transform:
-            translateY(-12px)
-            rotate(.7deg);
-    }
-
-}
-
-
-/* =====================================================
-   الصورة الكبيرة
+   الصورة فقط
+   بدون كلام فوقها
 ===================================================== */
 
 .teacher-image{
 
     position:relative;
 
-    flex-shrink:0;
+    z-index:10;
 
-    width:390px;
+    width:410px;
 
-    height:500px;
+    height:540px;
 
     overflow:hidden;
 
-    border-radius:30px;
+    border-radius:32px;
 
     background:
         linear-gradient(
@@ -584,7 +721,7 @@ header.scrolled{
 
     border:
         2px solid
-        rgba(177,148,255,.38);
+        rgba(177,148,255,.40);
 
     box-shadow:
 
@@ -592,17 +729,18 @@ header.scrolled{
         rgba(0,0,0,.65),
 
         0 0 90px
-        rgba(112,73,245,.3);
+        rgba(112,73,245,.30);
 
-    transition:
-        transform .5s ease,
-        box-shadow .5s ease;
+    animation:
+        floatTeacher 4s ease-in-out infinite;
+
+    transition:.5s;
 }
 
 .teacher-image:hover{
 
     transform:
-        translateY(-7px)
+        translateY(-8px)
         scale(1.025);
 
     box-shadow:
@@ -611,7 +749,7 @@ header.scrolled{
         rgba(0,0,0,.7),
 
         0 0 110px
-        rgba(112,73,245,.42);
+        rgba(112,73,245,.45);
 }
 
 .teacher-image img{
@@ -632,13 +770,11 @@ header.scrolled{
 
 .teacher-image:hover img{
 
-    transform:scale(1.06);
+    transform:scale(1.045);
 }
 
 
-/* =====================================================
-   لمعة على الصورة
-===================================================== */
+/* لمعة الصورة */
 
 .teacher-image::after{
 
@@ -647,11 +783,9 @@ header.scrolled{
     position:absolute;
 
     top:-120%;
-
-    left:-100%;
+    left:-120%;
 
     width:55%;
-
     height:300%;
 
     transform:rotate(28deg);
@@ -673,135 +807,37 @@ header.scrolled{
 @keyframes imageShine{
 
     0%{
-        left:-100%;
+        left:-120%;
     }
 
     45%,100%{
         left:160%;
     }
+}
 
+@keyframes floatTeacher{
+
+    0%,100%{
+        transform:
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            translateY(-12px);
+    }
 }
 
 
 /* =====================================================
-   الكلام بجانب الصورة
+   ملاحظة مهمة:
+   لا يوجد أي كلام فوق الصورة هنا.
 ===================================================== */
 
-.teacher-caption{
 
-    width:205px;
-
-    padding:23px 17px;
-
-    border-radius:21px;
-
-    text-align:right;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(24,20,40,.94),
-            rgba(11,12,20,.9)
-        );
-
-    backdrop-filter:blur(18px);
-
-    border:
-        1px solid
-        rgba(177,148,255,.15);
-
-    box-shadow:
-        0 20px 55px
-        rgba(0,0,0,.4);
-}
-
-.teacher-caption::before{
-
-    content:"";
-
-    display:block;
-
-    width:38px;
-
-    height:3px;
-
-    border-radius:10px;
-
-    margin-bottom:18px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #956cff,
-            #4369ed
-        );
-
-    box-shadow:
-        0 0 15px
-        rgba(126,91,255,.6);
-}
-
-.teacher-caption strong{
-
-    display:block;
-
-    font-size:25px;
-
-    font-weight:900;
-
-    line-height:1.4;
-
-    margin-bottom:12px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #b59aff
-        );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-}
-
-.teacher-caption span{
-
-    display:block;
-
-    color:#aaa4bb;
-
-    font-size:11px;
-
-    line-height:2;
-
-}
-
-.teacher-caption .mini-quote{
-
-    display:block;
-
-    margin-top:17px;
-
-    padding-top:14px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.07);
-
-    color:#d4caff;
-
-    font-size:10px;
-
-    line-height:1.8;
-}
-
-
-/* =====================================================
+/* =========================
    STATS
-===================================================== */
+========================= */
 
 .stats{
 
@@ -841,9 +877,7 @@ header.scrolled{
 
     transform:translateY(25px);
 
-    transition:
-        opacity .7s ease,
-        transform .7s ease;
+    transition:.7s;
 }
 
 .stat-card.show{
@@ -870,9 +904,9 @@ header.scrolled{
 }
 
 
-/* =====================================================
+/* =========================
    SECTIONS
-===================================================== */
+========================= */
 
 section{
     padding:105px 0;
@@ -927,9 +961,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    COURSES
-===================================================== */
+========================= */
 
 #courses{
     scroll-margin-top:90px;
@@ -962,11 +996,7 @@ section{
 
     transform:translateY(35px);
 
-    transition:
-        opacity .7s ease,
-        transform .7s ease,
-        border-color .3s,
-        box-shadow .3s;
+    transition:.7s;
 }
 
 .course-card.show{
@@ -1002,28 +1032,6 @@ section{
             #19142d,
             #10182e
         );
-}
-
-.course-image::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:210px;
-
-    height:210px;
-
-    left:-50px;
-
-    top:-70px;
-
-    border-radius:50%;
-
-    background:
-        rgba(116,72,232,.28);
-
-    filter:blur(20px);
 }
 
 .course-level{
@@ -1065,8 +1073,6 @@ section{
     color:
         rgba(255,255,255,.86);
 
-    transform:rotate(-4deg);
-
     animation:
         formulaFloat 4s ease-in-out infinite;
 }
@@ -1074,17 +1080,12 @@ section{
 @keyframes formulaFloat{
 
     0%,100%{
-        transform:
-            translateY(0)
-            rotate(-4deg);
+        transform:translateY(0);
     }
 
     50%{
-        transform:
-            translateY(-7px)
-            rotate(2deg);
+        transform:translateY(-7px);
     }
-
 }
 
 .course-body{
@@ -1092,7 +1093,9 @@ section{
 }
 
 .course-body h3{
+
     font-size:16px;
+
     margin-bottom:7px;
 }
 
@@ -1153,9 +1156,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    FEATURES
-===================================================== */
+========================= */
 
 .features{
 
@@ -1195,10 +1198,7 @@ section{
 
     transform:translateY(30px);
 
-    transition:
-        opacity .7s ease,
-        transform .7s ease,
-        border-color .3s;
+    transition:.7s;
 }
 
 .feature-card.show{
@@ -1219,7 +1219,6 @@ section{
 .feature-icon{
 
     width:50px;
-
     height:50px;
 
     display:grid;
@@ -1257,9 +1256,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    MOTIVATION
-===================================================== */
+========================= */
 
 .motivation-box{
 
@@ -1292,9 +1291,7 @@ section{
 
     transform:translateY(30px);
 
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+    transition:.8s;
 }
 
 .motivation-box.show{
@@ -1382,9 +1379,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    TEACHER SECTION
-===================================================== */
+========================= */
 
 .teacher-section{
 
@@ -1401,9 +1398,7 @@ section{
 
     transform:translateY(30px);
 
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+    transition:.8s;
 }
 
 .teacher-section.show{
@@ -1429,7 +1424,6 @@ section{
     position:absolute;
 
     width:330px;
-
     height:330px;
 
     border-radius:50%;
@@ -1449,7 +1443,6 @@ section{
     z-index:2;
 
     width:280px;
-
     height:350px;
 
     overflow:hidden;
@@ -1472,7 +1465,6 @@ section{
 .section-teacher-photo img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -1537,9 +1529,9 @@ section{
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer{
 
@@ -1613,52 +1605,34 @@ footer{
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================
+   TABLET
+========================= */
 
-@media(max-width:1150px){
+@media(max-width:1050px){
+
+    .hero-content{
+
+        width:52%;
+    }
 
     .teacher-hero{
 
-        left:-90px;
+        left:-80px;
 
         transform:
             translateY(-50%)
-            scale(.9);
-    }
-
-    .hero-content{
-        width:50%;
+            scale(.82);
     }
 
 }
 
+
+/* =========================
+   TABLET
+========================= */
+
 @media(max-width:900px){
-
-    .teacher-hero{
-
-        opacity:.25;
-
-        left:-120px;
-    }
-
-    .hero-content{
-
-        width:100%;
-
-        text-align:center;
-    }
-
-    .hero-description{
-
-        margin-inline:auto;
-    }
-
-    .hero-buttons{
-
-        justify-content:center;
-    }
 
     .nav-links{
         display:none;
@@ -1666,6 +1640,43 @@ footer{
 
     .mobile-menu{
         display:block;
+    }
+
+    .hero{
+
+        min-height:800px;
+    }
+
+    .hero-content{
+
+        width:100%;
+
+        text-align:center;
+
+        z-index:30;
+    }
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .teacher-hero{
+
+        left:50%;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.72);
+
+        opacity:.22;
     }
 
     .stats-grid{
@@ -1695,7 +1706,8 @@ footer{
 
     .teacher-info p{
 
-        margin-inline:auto;
+        margin-left:auto;
+        margin-right:auto;
     }
 
     .footer-grid{
@@ -1707,60 +1719,11 @@ footer{
 }
 
 
-@media(max-width:650px){
+/* =========================
+   MOBILE
+========================= */
 
-    .hero{
-
-        min-height:780px;
-    }
-
-    .teacher-hero{
-
-        left:50%;
-
-        top:58%;
-
-        transform:
-            translate(-50%,-50%)
-            scale(.7);
-
-        opacity:.18;
-    }
-
-    .hero-content{
-
-        position:relative;
-
-        z-index:20;
-    }
-
-    .hero h1{
-
-        font-size:42px;
-    }
-
-    .courses-grid,
-    .features-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .section-head{
-
-        display:block;
-    }
-
-    .view-all{
-
-        display:inline-block;
-
-        margin-top:13px;
-    }
-
-}
-
-
-@media(max-width:480px){
+@media(max-width:600px){
 
     .container{
 
@@ -1770,12 +1733,14 @@ footer{
 
     .hero{
 
+        min-height:760px;
+
         padding-top:115px;
     }
 
     .hero h1{
 
-        font-size:37px;
+        font-size:40px;
 
         letter-spacing:-1px;
     }
@@ -1798,11 +1763,13 @@ footer{
 
     .teacher-hero{
 
+        top:58%;
+
         transform:
             translate(-50%,-50%)
             scale(.55);
 
-        top:57%;
+        opacity:.17;
     }
 
     .stats-grid{
@@ -1830,6 +1797,24 @@ footer{
         padding:75px 0;
     }
 
+    .courses-grid,
+    .features-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .section-head{
+
+        display:block;
+    }
+
+    .view-all{
+
+        display:inline-block;
+
+        margin-top:13px;
+    }
+
     .motivation-box{
 
         padding:32px 20px;
@@ -1843,14 +1828,12 @@ footer{
     .section-ring{
 
         width:280px;
-
         height:280px;
     }
 
     .section-teacher-photo{
 
         width:235px;
-
         height:300px;
     }
 
@@ -1869,49 +1852,51 @@ footer{
 }
 
 
-/* =====================================================
-   SUPABASE
-=====================================================
+/* =========================
+   DATABASE PLACE
+========================= */
 
-   هنا مكان ربط قاعدة البيانات:
+/*
 
-   const SUPABASE_URL =
-   "https://YOUR-PROJECT.supabase.co";
+هنا لاحقًا هنربط Supabase:
 
-   const SUPABASE_ANON_KEY =
-   "YOUR-ANON-KEY";
+const SUPABASE_URL =
+"https://YOUR-PROJECT.supabase.co";
 
-   سيتم لاحقًا جلب:
+const SUPABASE_ANON_KEY =
+"YOUR-ANON-KEY";
 
-   - الكورسات
-   - الفيديوهات
-   - ملفات PDF
-   - الاختبارات
-   - النتائج
-   - بيانات الطالب
-   - صورة الطالب
-   - تقدم الطالب
+ومن قاعدة البيانات هنجيب:
 
-===================================================== */
+1- الكورسات
+2- الدروس
+3- الفيديوهات
+4- ملفات PDF
+5- الاختبارات
+6- نتائج الطالب
+7- بيانات الطالب
+8- صورة الطالب
+9- نسبة مشاهدة الكورس
+10- حالة الاشتراك
+
+*/
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header id="header">
 
 <div class="container">
 
 <nav class="nav">
-
 
 <a href="#home" class="brand">
 
@@ -1980,9 +1965,9 @@ id="mobileMenu"
 </header>
 
 
-<!-- =====================================================
+<!-- =========================
      MOBILE NAV
-===================================================== -->
+========================= -->
 
 <div
 class="mobile-nav"
@@ -2012,21 +1997,18 @@ id="mobileNav"
 </div>
 
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
+<!-- =========================
+     HERO
+========================= -->
 
 <main id="home">
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <section class="hero">
 
 <div class="container">
 
+
+<!-- الكلام ناحية اليمين -->
 
 <div class="hero-content">
 
@@ -2080,7 +2062,6 @@ id="exploreCourses"
 <span>↓</span>
 </a>
 
-
 <a
 href="auth.html"
 class="secondary-btn"
@@ -2094,7 +2075,8 @@ class="secondary-btn"
 
 
 <!-- =====================================================
-     TEACHER
+     الصورة ناحية الشمال فقط
+     مفيش كلام فوقها
 ===================================================== -->
 
 <div class="teacher-hero">
@@ -2104,44 +2086,12 @@ class="secondary-btn"
 <div class="teacher-ring"></div>
 
 
-<div class="teacher-layout">
-
-
-<!-- الصورة -->
-
 <div class="teacher-image">
 
 <img
 src="teacher.png"
 alt="المستر أمير"
-onerror="
-this.style.display='none';
-this.parentElement.innerHTML +=
-'<div style=&quot;height:100%;display:grid;place-items:center;font-size:100px&quot;>👨‍🏫</div>';
-"
 >
-
-</div>
-
-
-<!-- الكلام بجانب الصورة -->
-
-<div class="teacher-caption">
-
-<strong>
-المستر أمير
-</strong>
-
-<span>
-مدرسك معاك خطوة بخطوة، من أول فكرة لحد أصعب مسألة.
-</span>
-
-<span class="mini-quote">
-«مفيش مستحيل... طول ما أنت مكمل.» 💜
-</span>
-
-</div>
-
 
 </div>
 
@@ -2153,9 +2103,9 @@ this.parentElement.innerHTML +=
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      STATS
-===================================================== -->
+========================= -->
 
 <div class="stats">
 
@@ -2163,12 +2113,9 @@ this.parentElement.innerHTML +=
 
 <div class="stats-grid">
 
-
 <div class="stat-card">
 
-<strong>
-🎥
-</strong>
+<strong>🎥</strong>
 
 <span>
 شرح فيديو خطوة بخطوة
@@ -2179,9 +2126,7 @@ this.parentElement.innerHTML +=
 
 <div class="stat-card">
 
-<strong>
-📚
-</strong>
+<strong>📚</strong>
 
 <span>
 ملازم وملفات PDF
@@ -2192,9 +2137,7 @@ this.parentElement.innerHTML +=
 
 <div class="stat-card">
 
-<strong>
-📝
-</strong>
+<strong>📝</strong>
 
 <span>
 تدريبات واختبارات
@@ -2205,9 +2148,7 @@ this.parentElement.innerHTML +=
 
 <div class="stat-card">
 
-<strong>
-📊
-</strong>
+<strong>📊</strong>
 
 <span>
 متابعة مستواك
@@ -2215,7 +2156,6 @@ this.parentElement.innerHTML +=
 
 </div>
 
-
 </div>
 
 </div>
@@ -2223,14 +2163,13 @@ this.parentElement.innerHTML +=
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      COURSES
-===================================================== -->
+========================= -->
 
 <section id="courses">
 
 <div class="container">
-
 
 <div class="section-head">
 
@@ -2249,7 +2188,6 @@ this.parentElement.innerHTML +=
 </p>
 
 </div>
-
 
 <a
 href="courses.html"
@@ -2291,9 +2229,7 @@ x² + y²
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
-
 <span>📄 PDF</span>
-
 <span>📝 تدريب</span>
 
 </div>
@@ -2345,9 +2281,7 @@ class="course-link"
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
-
 <span>📄 PDF</span>
-
 <span>📝 اختبار</span>
 
 </div>
@@ -2399,9 +2333,7 @@ class="course-link"
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
-
 <span>📚 ملفات</span>
-
 <span>📝 اختبارات</span>
 
 </div>
@@ -2433,9 +2365,9 @@ class="course-link"
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      FEATURES
-===================================================== -->
+========================= -->
 
 <section
 id="features"
@@ -2443,7 +2375,6 @@ class="features"
 >
 
 <div class="container">
-
 
 <div class="section-head">
 
@@ -2578,9 +2509,9 @@ PDF وملفات
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      MOTIVATION
-===================================================== -->
+========================= -->
 
 <section>
 
@@ -2636,9 +2567,9 @@ PDF وملفات
 </section>
 
 
-<!-- =====================================================
-     TEACHER SECTION
-===================================================== -->
+<!-- =========================
+     TEACHER
+========================= -->
 
 <section id="teacher">
 
@@ -2726,9 +2657,9 @@ alt="المستر أمير"
 </main>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
@@ -2855,9 +2786,9 @@ class="brand"
 <script>
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 const header =
 document.getElementById("header");
@@ -2879,24 +2810,32 @@ window.addEventListener(
 });
 
 
-/* =====================================================
+/* =========================
    MOBILE MENU
-===================================================== */
+========================= */
 
 const mobileMenu =
-document.getElementById("mobileMenu");
+document.getElementById(
+    "mobileMenu"
+);
 
 const mobileNav =
-document.getElementById("mobileNav");
+document.getElementById(
+    "mobileNav"
+);
 
 mobileMenu.addEventListener(
 "click",
 ()=>{
 
-    mobileNav.classList.toggle("active");
+    mobileNav.classList.toggle(
+        "active"
+    );
 
     mobileMenu.textContent =
-        mobileNav.classList.contains("active")
+        mobileNav.classList.contains(
+            "active"
+        )
         ? "×"
         : "☰";
 
@@ -2909,30 +2848,28 @@ mobileNav
 link=>{
 
     link.addEventListener(
-    "click",
-    ()=>{
+        "click",
+        ()=>{
 
-        mobileNav.classList.remove(
-            "active"
-        );
+            mobileNav.classList.remove(
+                "active"
+            );
 
-        mobileMenu.textContent="☰";
+            mobileMenu.textContent="☰";
 
-    });
+        }
+    );
 
 });
 
 
-/* =====================================================
+/* =========================
    EXPLORE COURSES
-===================================================== */
+========================= */
 
-const exploreCourses =
-document.getElementById(
-    "exploreCourses"
-);
-
-exploreCourses.addEventListener(
+document
+.getElementById("exploreCourses")
+.addEventListener(
 "click",
 function(event){
 
@@ -2951,9 +2888,9 @@ function(event){
 });
 
 
-/* =====================================================
+/* =========================
    SCROLL ANIMATION
-===================================================== */
+========================= */
 
 const animatedElements =
 document.querySelectorAll(
@@ -2995,9 +2932,9 @@ element=>{
 });
 
 
-/* =====================================================
+/* =========================
    YEAR
-===================================================== */
+========================= */
 
 document.getElementById(
     "year"
@@ -3006,15 +2943,28 @@ new Date().getFullYear();
 
 
 /* =====================================================
-   SUPABASE DATABASE
+   SUPABASE
 
-   هنا سنضع كود ربط قاعدة البيانات لاحقًا.
+   هنربط قاعدة البيانات هنا لاحقًا:
 
    const SUPABASE_URL =
    "https://YOUR-PROJECT.supabase.co";
 
    const SUPABASE_ANON_KEY =
    "YOUR-ANON-KEY";
+
+   البيانات التي سيتم جلبها:
+
+   - الكورسات
+   - الدروس
+   - الفيديوهات
+   - ملفات PDF
+   - الاختبارات
+   - النتائج
+   - بيانات الطالب
+   - صورة الطالب
+   - نسبة المشاهدة
+   - الاشتراكات
 
 ===================================================== */
 
