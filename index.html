@@ -23,37 +23,24 @@ html{
 }
 
 body{
-    font-family:
-        Cairo,
-        Tajawal,
-        Arial,
-        sans-serif;
-
+    font-family:Cairo,Tajawal,Arial,sans-serif;
     background:#07070b;
     color:#fff;
-
     overflow-x:hidden;
 }
 
 body::before{
     content:"";
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     background-image:
         radial-gradient(
             rgba(255,255,255,.8) 1px,
             transparent 1px
         );
-
     background-size:90px 90px;
-
     opacity:.045;
-
     z-index:-10;
 }
 
@@ -67,11 +54,7 @@ button{
 }
 
 .container{
-    width:min(
-        1180px,
-        calc(100% - 30px)
-    );
-
+    width:min(1180px,calc(100% - 30px));
     margin:auto;
 }
 
@@ -81,114 +64,67 @@ button{
 ===================================================== */
 
 header{
-
     position:fixed;
-
     top:0;
     right:0;
     left:0;
-
     z-index:1000;
-
-    background:
-        rgba(7,7,11,.55);
-
+    background:rgba(7,7,11,.55);
     backdrop-filter:blur(18px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.06);
-
+    border-bottom:1px solid rgba(255,255,255,.06);
     transition:.3s;
 }
 
 header.scrolled{
-    background:
-        rgba(7,7,11,.94);
-
-    box-shadow:
-        0 15px 50px
-        rgba(0,0,0,.4);
+    background:rgba(7,7,11,.94);
+    box-shadow:0 15px 50px rgba(0,0,0,.4);
 }
 
 .nav{
-
     min-height:78px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     gap:20px;
 }
 
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
 }
 
 .logo{
-
     width:47px;
     height:47px;
-
     display:grid;
-
     place-items:center;
-
     border-radius:15px;
-
     font-size:23px;
-
     font-weight:900;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8d5cff,
-            #365ee8
-        );
-
-    box-shadow:
-        0 10px 35px
-        rgba(113,73,245,.3);
+    background:linear-gradient(135deg,#8d5cff,#365ee8);
+    box-shadow:0 10px 35px rgba(113,73,245,.3);
 }
 
 .brand-text strong{
-
     display:block;
-
     font-size:17px;
 }
 
 .brand-text span{
-
     color:#858590;
-
     font-size:9px;
 }
 
 .nav-links{
-
     display:flex;
-
     align-items:center;
-
     gap:27px;
 }
 
 .nav-links a{
-
     color:#aaaab5;
-
     font-size:12px;
-
     transition:.25s;
 }
 
@@ -197,62 +133,34 @@ header.scrolled{
 }
 
 .nav-actions{
-
     display:flex;
-
     align-items:center;
-
     gap:9px;
 }
 
 .login-btn{
-
-    padding:
-        10px 16px;
-
+    padding:10px 16px;
     border-radius:12px;
-
-    background:
-        rgba(255,255,255,.05);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
     font-size:11px;
-
     transition:.25s;
 }
 
 .login-btn:hover{
-
-    background:
-        rgba(255,255,255,.1);
-
-    transform:
-        translateY(-2px);
+    background:rgba(255,255,255,.1);
+    transform:translateY(-2px);
 }
 
 .mobile-menu{
-
     display:none;
-
     width:42px;
     height:42px;
-
     border-radius:12px;
-
     color:#fff;
-
-    background:
-        rgba(255,255,255,.05);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
     font-size:20px;
-
     cursor:pointer;
 }
 
@@ -262,32 +170,17 @@ header.scrolled{
 ===================================================== */
 
 .mobile-nav{
-
     display:none;
-
     position:fixed;
-
     top:88px;
-
     right:15px;
     left:15px;
-
     z-index:999;
-
     padding:10px;
-
     border-radius:17px;
-
-    background:
-        rgba(12,12,18,.97);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.5);
+    background:rgba(12,12,18,.97);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
 .mobile-nav.active{
@@ -295,24 +188,16 @@ header.scrolled{
 }
 
 .mobile-nav a{
-
     display:block;
-
     padding:13px;
-
     border-radius:10px;
-
     color:#aaaab5;
-
     font-size:12px;
 }
 
 .mobile-nav a:hover{
-
     color:#fff;
-
-    background:
-        rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);
 }
 
 
@@ -321,96 +206,56 @@ header.scrolled{
 ===================================================== */
 
 .hero{
-
     position:relative;
-
     min-height:820px;
-
-    padding:
-        150px 0 90px;
-
+    padding:150px 0 90px;
     display:flex;
-
     align-items:center;
-
     overflow:hidden;
 }
 
 .hero::before{
-
     content:"";
-
     position:absolute;
-
     width:650px;
     height:650px;
-
     left:-280px;
     top:50%;
-
-    transform:
-        translateY(-50%);
-
+    transform:translateY(-50%);
     border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(112,72,245,.2),
-            transparent 68%
-        );
-
+    background:radial-gradient(
+        circle,
+        rgba(112,72,245,.2),
+        transparent 68%
+    );
     filter:blur(25px);
 }
 
 .hero-content{
-
     position:relative;
-
     z-index:5;
-
     width:53%;
 }
 
 .badge{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
-
-    padding:
-        8px 13px;
-
+    padding:8px 13px;
     margin-bottom:22px;
-
     border-radius:100px;
-
     color:#c5b5ff;
-
     font-size:10px;
-
-    background:
-        rgba(115,73,245,.1);
-
-    border:
-        1px solid
-        rgba(139,105,255,.22);
+    background:rgba(115,73,245,.1);
+    border:1px solid rgba(139,105,255,.22);
 }
 
 .badge-dot{
-
     width:7px;
     height:7px;
-
     border-radius:50%;
-
     background:#956fff;
-
-    box-shadow:
-        0 0 18px #956fff;
-
+    box-shadow:0 0 18px #956fff;
     animation:pulse 1.8s infinite;
 }
 
@@ -425,49 +270,35 @@ header.scrolled{
         transform:scale(1.2);
         opacity:1;
     }
+
 }
 
 .hero h1{
-
-    font-size:
-        clamp(45px,6vw,76px);
-
+    font-size:clamp(45px,6vw,76px);
     line-height:1.08;
-
     font-weight:900;
-
     letter-spacing:-2px;
-
     margin-bottom:20px;
 }
 
 .hero-highlight{
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ad8cff,
-            #7193ff
-        );
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ad8cff,
+        #7193ff
+    );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
 }
 
 .hero-description{
-
     color:#a0a0ac;
-
     font-size:15px;
-
     line-height:2;
-
     max-width:620px;
-
     margin-bottom:28px;
 }
 
@@ -476,104 +307,59 @@ header.scrolled{
 }
 
 .hero-buttons{
-
     display:flex;
-
     gap:10px;
-
     flex-wrap:wrap;
 }
 
 .primary-btn{
-
     min-height:51px;
-
-    padding:
-        0 23px;
-
+    padding:0 23px;
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:10px;
-
     border-radius:14px;
-
     color:#fff;
-
     font-size:12px;
-
     font-weight:800;
-
-    background:
-        linear-gradient(
-            135deg,
-            #8257f5,
-            #365ee8
-        );
-
-    box-shadow:
-        0 15px 40px
-        rgba(91,65,220,.3);
-
+    background:linear-gradient(
+        135deg,
+        #8257f5,
+        #365ee8
+    );
+    box-shadow:0 15px 40px rgba(91,65,220,.3);
     transition:.3s;
-
     cursor:pointer;
 }
 
 .primary-btn:hover{
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 20px 55px
-        rgba(91,65,220,.45);
+    transform:translateY(-4px);
+    box-shadow:0 20px 55px rgba(91,65,220,.45);
 }
 
 .secondary-btn{
-
     min-height:51px;
-
-    padding:
-        0 22px;
-
+    padding:0 22px;
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:14px;
-
     color:#dddde5;
-
     font-size:12px;
-
-    background:
-        rgba(255,255,255,.045);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
     transition:.3s;
 }
 
 .secondary-btn:hover{
-
-    background:
-        rgba(255,255,255,.08);
-
-    transform:
-        translateY(-3px);
+    background:rgba(255,255,255,.08);
+    transform:translateY(-3px);
 }
 
 
 /* =====================================================
-   TEACHER IMAGE
+   TEACHER
 ===================================================== */
 
 .teacher-hero{
@@ -584,24 +370,32 @@ header.scrolled{
 
     top:50%;
 
-    transform:
-        translateY(-50%);
+    transform:translateY(-50%);
 
     width:540px;
-    height:620px;
+
+    height:650px;
 
     z-index:3;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 }
 
 .teacher-glow{
 
     position:absolute;
 
-    width:470px;
-    height:470px;
+    width:500px;
 
-    top:75px;
-    left:35px;
+    height:500px;
+
+    top:20px;
+
+    left:20px;
 
     border-radius:50%;
 
@@ -627,23 +421,24 @@ header.scrolled{
     50%{
         transform:scale(1.09);
     }
+
 }
 
 .teacher-ring{
 
     position:absolute;
 
-    width:480px;
-    height:480px;
+    width:500px;
 
-    top:70px;
-    left:30px;
+    height:500px;
+
+    top:15px;
+
+    left:20px;
 
     border-radius:50%;
 
-    border:
-        1px solid
-        rgba(146,112,255,.22);
+    border:1px solid rgba(146,112,255,.22);
 
     animation:
         rotateRing 18s linear infinite;
@@ -656,18 +451,18 @@ header.scrolled{
     position:absolute;
 
     width:10px;
+
     height:10px;
 
     border-radius:50%;
 
     top:12%;
+
     right:15%;
 
     background:#a98cff;
 
-    box-shadow:
-        0 0 22px
-        #a98cff;
+    box-shadow:0 0 22px #a98cff;
 }
 
 @keyframes rotateRing{
@@ -679,17 +474,29 @@ header.scrolled{
     to{
         transform:rotate(360deg);
     }
+
 }
+
+
+/* =====================================================
+   IMAGE + TEXT
+===================================================== */
 
 .teacher-image-box{
 
-    position:absolute;
+    position:relative;
 
-    width:390px;
-    height:500px;
+    z-index:5;
 
-    top:60px;
-    left:75px;
+    width:450px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
 
     animation:
         floatTeacher 4s ease-in-out infinite;
@@ -705,22 +512,28 @@ header.scrolled{
 
     50%{
         transform:
-            translateY(-15px)
-            rotate(1.2deg);
+            translateY(-13px)
+            rotate(1deg);
     }
+
 }
+
+
+/* =====================================================
+   SQUARE IMAGE
+===================================================== */
 
 .teacher-image{
 
     position:relative;
 
-    width:100%;
-    height:100%;
+    width:450px;
+
+    height:450px;
 
     overflow:hidden;
 
-    border-radius:
-        190px 190px 110px 110px;
+    border-radius:28px;
 
     background:
         linear-gradient(
@@ -731,26 +544,47 @@ header.scrolled{
 
     border:
         2px solid
-        rgba(177,148,255,.3);
+        rgba(177,148,255,.35);
 
     box-shadow:
+
         0 35px 100px
-        rgba(0,0,0,.55),
+        rgba(0,0,0,.6),
 
         0 0 80px
-        rgba(112,73,245,.22);
+        rgba(112,73,245,.28);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+.teacher-image:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+    box-shadow:
+
+        0 45px 110px
+        rgba(0,0,0,.65),
+
+        0 0 100px
+        rgba(112,73,245,.38);
 }
 
 .teacher-image img{
 
     width:100%;
+
     height:100%;
+
+    display:block;
 
     object-fit:cover;
 
     object-position:center;
-
-    transform:scale(1.01);
 
     transition:
         transform .7s ease;
@@ -758,9 +592,13 @@ header.scrolled{
 
 .teacher-image:hover img{
 
-    transform:
-        scale(1.07);
+    transform:scale(1.06);
 }
+
+
+/* =====================================================
+   IMAGE SHINE
+===================================================== */
 
 .teacher-image::after{
 
@@ -770,19 +608,19 @@ header.scrolled{
 
     top:-120%;
 
-    left:-80%;
+    left:-100%;
 
     width:55%;
-    height:280%;
 
-    transform:
-        rotate(28deg);
+    height:300%;
+
+    transform:rotate(28deg);
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.18),
+            rgba(255,255,255,.2),
             transparent
         );
 
@@ -795,66 +633,79 @@ header.scrolled{
 @keyframes imageShine{
 
     0%{
-        left:-90%;
+        left:-100%;
     }
 
     45%,100%{
-        left:150%;
+        left:160%;
     }
+
 }
 
 
 /* =====================================================
-   TEXT ON IMAGE
+   CAPTION UNDER IMAGE
 ===================================================== */
 
 .teacher-caption{
 
-    position:absolute;
+    position:relative;
 
-    right:20px;
-    left:20px;
+    width:450px;
 
-    bottom:20px;
-
-    z-index:5;
-
-    padding:
-        17px 19px;
+    padding:16px 20px;
 
     border-radius:17px;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(8,8,13,.18),
-            rgba(8,8,13,.9)
-        );
+    text-align:center;
 
-    backdrop-filter:
-        blur(8px);
+    background:
+        rgba(10,10,16,.88);
+
+    backdrop-filter:blur(12px);
 
     border:
         1px solid
-        rgba(255,255,255,.1);
+        rgba(255,255,255,.09);
 
-    text-align:right;
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.3);
 }
 
 .teacher-caption strong{
 
     display:block;
 
-    font-size:18px;
+    font-size:20px;
 
-    margin-bottom:4px;
+    font-weight:900;
+
+    margin-bottom:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #b59aff
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
 }
 
 .teacher-caption span{
 
-    color:#d0c6ff;
+    display:block;
 
-    font-size:10px;
+    color:#bdb5d7;
+
+    font-size:11px;
+
+    line-height:1.8;
 }
 
 
@@ -898,8 +749,7 @@ header.scrolled{
 
     opacity:0;
 
-    transform:
-        translateY(25px);
+    transform:translateY(25px);
 
     transition:
         opacity .7s ease,
@@ -910,8 +760,7 @@ header.scrolled{
 
     opacity:1;
 
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
 .stat-card strong{
@@ -993,7 +842,6 @@ section{
 ===================================================== */
 
 #courses{
-
     scroll-margin-top:90px;
 }
 
@@ -1022,8 +870,7 @@ section{
 
     opacity:0;
 
-    transform:
-        translateY(35px);
+    transform:translateY(35px);
 
     transition:
         opacity .7s ease,
@@ -1036,14 +883,12 @@ section{
 
     opacity:1;
 
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
 .course-card:hover{
 
-    transform:
-        translateY(-7px);
+    transform:translateY(-7px);
 
     border-color:
         rgba(137,102,255,.28);
@@ -1076,9 +921,11 @@ section{
     position:absolute;
 
     width:210px;
+
     height:210px;
 
     left:-50px;
+
     top:-70px;
 
     border-radius:50%;
@@ -1094,12 +941,12 @@ section{
     position:absolute;
 
     top:13px;
+
     right:13px;
 
     z-index:2;
 
-    padding:
-        6px 10px;
+    padding:6px 10px;
 
     border-radius:9px;
 
@@ -1128,8 +975,7 @@ section{
     color:
         rgba(255,255,255,.86);
 
-    transform:
-        rotate(-4deg);
+    transform:rotate(-4deg);
 
     animation:
         formulaFloat 4s ease-in-out infinite;
@@ -1148,6 +994,7 @@ section{
             translateY(-7px)
             rotate(2deg);
     }
+
 }
 
 .course-body{
@@ -1183,8 +1030,7 @@ section{
 
     font-size:9px;
 
-    margin:
-        15px 0;
+    margin:15px 0;
 }
 
 .course-footer{
@@ -1207,8 +1053,7 @@ section{
 
 .course-link{
 
-    padding:
-        8px 12px;
+    padding:8px 12px;
 
     border-radius:9px;
 
@@ -1261,8 +1106,7 @@ section{
 
     opacity:0;
 
-    transform:
-        translateY(30px);
+    transform:translateY(30px);
 
     transition:
         opacity .7s ease,
@@ -1274,14 +1118,12 @@ section{
 
     opacity:1;
 
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
 .feature-card:hover{
 
-    transform:
-        translateY(-5px);
+    transform:translateY(-5px);
 
     border-color:
         rgba(116,72,232,.25);
@@ -1290,6 +1132,7 @@ section{
 .feature-icon{
 
     width:50px;
+
     height:50px;
 
     display:grid;
@@ -1360,8 +1203,7 @@ section{
 
     opacity:0;
 
-    transform:
-        translateY(30px);
+    transform:translateY(30px);
 
     transition:
         opacity .8s ease,
@@ -1372,8 +1214,7 @@ section{
 
     opacity:1;
 
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
 .motivation-box::before{
@@ -1383,6 +1224,7 @@ section{
     position:absolute;
 
     left:20px;
+
     bottom:-110px;
 
     font-family:serif;
@@ -1418,8 +1260,7 @@ section{
 
     line-height:1.3;
 
-    margin:
-        10px 0 13px;
+    margin:10px 0 13px;
 }
 
 .motivation-content p{
@@ -1437,8 +1278,7 @@ section{
 
     display:inline-block;
 
-    padding:
-        11px 15px;
+    padding:11px 15px;
 
     border-radius:12px;
 
@@ -1472,8 +1312,7 @@ section{
 
     opacity:0;
 
-    transform:
-        translateY(30px);
+    transform:translateY(30px);
 
     transition:
         opacity .8s ease,
@@ -1484,8 +1323,7 @@ section{
 
     opacity:1;
 
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
 .teacher-section-image{
@@ -1504,6 +1342,7 @@ section{
     position:absolute;
 
     width:330px;
+
     height:330px;
 
     border-radius:50%;
@@ -1523,6 +1362,7 @@ section{
     z-index:2;
 
     width:280px;
+
     height:350px;
 
     overflow:hidden;
@@ -1545,6 +1385,7 @@ section{
 .section-teacher-photo img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -1564,8 +1405,7 @@ section{
     font-size:
         clamp(32px,4vw,46px);
 
-    margin:
-        10px 0 15px;
+    margin:10px 0 15px;
 }
 
 .teacher-info p{
@@ -1593,8 +1433,7 @@ section{
 
 .teacher-point{
 
-    padding:
-        13px 14px;
+    padding:13px 14px;
 
     border-radius:13px;
 
@@ -1617,8 +1456,7 @@ section{
 
 footer{
 
-    padding:
-        55px 0 23px;
+    padding:55px 0 23px;
 
     border-top:
         1px solid
@@ -1702,6 +1540,7 @@ footer{
         left:-80px;
         opacity:.75;
     }
+
 }
 
 @media(max-width:800px){
@@ -1740,7 +1579,21 @@ footer{
         transform:
             translate(-50%,-50%);
 
-        opacity:.2;
+        width:500px;
+
+        opacity:.22;
+    }
+
+    .teacher-image{
+
+        width:400px;
+
+        height:400px;
+    }
+
+    .teacher-caption{
+
+        width:400px;
     }
 
     .stats-grid{
@@ -1777,13 +1630,13 @@ footer{
         grid-template-columns:
             repeat(2,1fr);
     }
+
 }
 
 @media(max-width:560px){
 
     .container{
-        width:
-            calc(100% - 24px);
+        width:calc(100% - 24px);
     }
 
     .nav{
@@ -1795,6 +1648,7 @@ footer{
     }
 
     .login-btn{
+
         padding:
             9px 12px;
 
@@ -1815,6 +1669,7 @@ footer{
     }
 
     .hero-description{
+
         font-size:12px;
     }
 
@@ -1868,18 +1723,21 @@ footer{
     }
 
     .teacher-section-image{
+
         min-height:370px;
     }
 
     .section-ring{
 
         width:280px;
+
         height:280px;
     }
 
     .section-teacher-photo{
 
         width:235px;
+
         height:300px;
     }
 
@@ -1894,7 +1752,66 @@ footer{
 
         grid-template-columns:1fr;
     }
+
+    .teacher-hero{
+
+        width:390px;
+    }
+
+    .teacher-image{
+
+        width:340px;
+
+        height:340px;
+
+        border-radius:23px;
+    }
+
+    .teacher-caption{
+
+        width:340px;
+
+        padding:
+            13px 15px;
+    }
+
+    .teacher-caption strong{
+
+        font-size:17px;
+    }
+
+    .teacher-caption span{
+
+        font-size:9px;
+    }
+
 }
+
+
+/* =====================================================
+   SUPABASE PLACEHOLDER
+=====================================================
+
+   في الخطوة القادمة نربط قاعدة البيانات هنا.
+
+   مثال:
+
+   const SUPABASE_URL =
+   "https://YOUR-PROJECT.supabase.co";
+
+   const SUPABASE_ANON_KEY =
+   "YOUR-ANON-KEY";
+
+   وبعد الربط:
+
+   الأدمن يضيف الكورسات
+   الأدمن يضيف الفيديوهات
+   الأدمن يضيف ملفات PDF
+   الأدمن يضيف الاختبارات
+
+   والطالب يشاهد المحتوى تلقائيًا.
+
+===================================================== */
 
 </style>
 
@@ -2067,10 +1984,6 @@ id="mobileNav"
 
 <div class="hero-buttons">
 
-<!-- =====================================================
-     الزر ينزل مباشرة إلى قسم الكورسات
-===================================================== -->
-
 <a
 href="#courses"
 class="primary-btn"
@@ -2094,7 +2007,7 @@ class="secondary-btn"
 
 
 <!-- =====================================================
-     TEACHER
+     TEACHER IMAGE
 ===================================================== -->
 
 <div class="teacher-hero">
@@ -2102,7 +2015,6 @@ class="secondary-btn"
 <div class="teacher-glow"></div>
 
 <div class="teacher-ring"></div>
-
 
 <div class="teacher-image-box">
 
@@ -2118,6 +2030,10 @@ this.parentElement.innerHTML +=
 "
 >
 
+</div>
+
+
+<!-- الكلام تحت الصورة -->
 
 <div class="teacher-caption">
 
@@ -2128,8 +2044,6 @@ this.parentElement.innerHTML +=
 <span>
 مدرسك معاك... خطوة بخطوة لحد ما توصل 💜
 </span>
-
-</div>
 
 </div>
 
@@ -2154,31 +2068,54 @@ this.parentElement.innerHTML +=
 <div class="stats-grid">
 
 <div class="stat-card">
-<strong>🎥</strong>
+
+<strong>
+🎥
+</strong>
+
 <span>
 شرح فيديو خطوة بخطوة
 </span>
+
 </div>
 
+
 <div class="stat-card">
-<strong>📚</strong>
+
+<strong>
+📚
+</strong>
+
 <span>
 ملازم وملفات PDF
 </span>
+
 </div>
 
+
 <div class="stat-card">
-<strong>📝</strong>
+
+<strong>
+📝
+</strong>
+
 <span>
 تدريبات واختبارات
 </span>
+
 </div>
 
+
 <div class="stat-card">
-<strong>📊</strong>
+
+<strong>
+📊
+</strong>
+
 <span>
 متابعة مستواك
 </span>
+
 </div>
 
 </div>
@@ -2255,7 +2192,9 @@ x² + y²
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
+
 <span>📄 PDF</span>
+
 <span>📝 تدريب</span>
 
 </div>
@@ -2307,7 +2246,9 @@ class="course-link"
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
+
 <span>📄 PDF</span>
+
 <span>📝 اختبار</span>
 
 </div>
@@ -2359,7 +2300,9 @@ class="course-link"
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
+
 <span>📚 ملفات</span>
+
 <span>📝 اختبارات</span>
 
 </div>
@@ -2552,9 +2495,13 @@ PDF وملفات
 </small>
 
 <h2>
+
 متقولش «أنا مش بعرف رياضة»...
+
 <br>
+
 قول «لسه هتعلم».
+
 </h2>
 
 <p>
@@ -2792,6 +2739,7 @@ class="brand"
 <div class="copyright">
 
 ©
+
 <span id="year"></span>
 
 الخوارزمي — جميع الحقوق محفوظة
@@ -2817,18 +2765,17 @@ window.addEventListener(
 "scroll",
 ()=>{
 
-if(window.scrollY > 30){
+    if(window.scrollY > 30){
 
-header.classList.add("scrolled");
+        header.classList.add("scrolled");
 
-}else{
+    }else{
 
-header.classList.remove("scrolled");
+        header.classList.remove("scrolled");
 
-}
+    }
 
-}
-);
+});
 
 
 /* =====================================================
@@ -2845,15 +2792,14 @@ mobileMenu.addEventListener(
 "click",
 ()=>{
 
-mobileNav.classList.toggle("active");
+    mobileNav.classList.toggle("active");
 
-mobileMenu.textContent =
-mobileNav.classList.contains("active")
-? "×"
-: "☰";
+    mobileMenu.textContent =
+        mobileNav.classList.contains("active")
+        ? "×"
+        : "☰";
 
-}
-);
+});
 
 
 mobileNav
@@ -2861,51 +2807,50 @@ mobileNav
 .forEach(
 link=>{
 
-link.addEventListener(
-"click",
-()=>{
+    link.addEventListener(
+    "click",
+    ()=>{
 
-mobileNav.classList.remove(
-"active"
-);
+        mobileNav.classList.remove(
+            "active"
+        );
 
-mobileMenu.textContent="☰";
+        mobileMenu.textContent="☰";
 
-}
-);
+    });
 
-}
-);
+});
 
 
 /* =====================================================
-   SMOOTH SCROLL
-   زر استكشف الكورسات
+   EXPLORE COURSES
 ===================================================== */
 
 const exploreCourses =
 document.getElementById(
-"exploreCourses"
+    "exploreCourses"
 );
 
 exploreCourses.addEventListener(
 "click",
 function(event){
 
-event.preventDefault();
+    event.preventDefault();
 
-const courses =
-document.getElementById(
-"courses"
-);
+    const courses =
+        document.getElementById(
+            "courses"
+        );
 
-courses.scrollIntoView({
-behavior:"smooth",
-block:"start"
+    courses.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
+
 });
-
-}
-);
 
 
 /* =====================================================
@@ -2914,46 +2859,42 @@ block:"start"
 
 const animatedElements =
 document.querySelectorAll(
-".course-card, .feature-card, .stat-card, .motivation-box, .teacher-section"
+    ".course-card, .feature-card, .stat-card, .motivation-box, .teacher-section"
 );
-
 
 const observer =
 new IntersectionObserver(
 entries=>{
 
-entries.forEach(
-entry=>{
+    entries.forEach(
+    entry=>{
 
-if(entry.isIntersecting){
+        if(entry.isIntersecting){
 
-entry.target.classList.add(
-"show"
-);
+            entry.target.classList.add(
+                "show"
+            );
 
-observer.unobserve(
-entry.target
-);
+            observer.unobserve(
+                entry.target
+            );
 
-}
+        }
 
-}
-);
+    });
 
 },
 {
-threshold:.08
-}
-);
+    threshold:.08
+});
 
 
 animatedElements.forEach(
 element=>{
 
-observer.observe(element);
+    observer.observe(element);
 
-}
-);
+});
 
 
 /* =====================================================
@@ -2961,18 +2902,16 @@ observer.observe(element);
 ===================================================== */
 
 document.getElementById(
-"year"
+    "year"
 ).textContent =
 new Date().getFullYear();
 
 
 /* =====================================================
-   SUPABASE
+   DATABASE - SUPABASE
 =====================================================
 
-   هنا هنربط قاعدة البيانات في الخطوة القادمة.
-
-   مثال:
+   هنا سيتم ربط قاعدة البيانات لاحقًا.
 
    const SUPABASE_URL =
    "https://YOUR-PROJECT.supabase.co";
@@ -2980,25 +2919,16 @@ new Date().getFullYear();
    const SUPABASE_ANON_KEY =
    "YOUR-ANON-KEY";
 
-   const supabaseClient =
-   supabase.createClient(
-       SUPABASE_URL,
-       SUPABASE_ANON_KEY
-   );
+   وبعد الربط سيتم جلب:
 
-   وبعدها الكورسات لن تكون ثابتة هنا.
-
-   الأدمن يضيف:
-
-   - اسم الكورس
-   - الصورة
-   - الصف
-   - الوصف
-   - الفيديوهات
-   - PDF
-   - الاختبارات
-
-   والطالب يشوفها تلقائيًا.
+   1- الكورسات
+   2- الفيديوهات
+   3- ملفات PDF
+   4- الاختبارات
+   5- النتائج
+   6- بيانات الطلاب
+   7- صور الطلاب
+   8- تقدم الطالب
 
 ===================================================== */
 
@@ -3006,4 +2936,5 @@ new Date().getFullYear();
 </script>
 
 </body>
+
 </html>
