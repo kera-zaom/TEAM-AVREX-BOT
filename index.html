@@ -20,30 +20,66 @@ html{
 }
 
 body{
-    font-family:Cairo,Tajawal,Arial,sans-serif;
-    background:#07070b;
+    font-family:
+        Arial,
+        Tahoma,
+        sans-serif;
+
+    background:#07070d;
     color:#fff;
+
     overflow-x:hidden;
 }
 
 body::before{
     content:"";
+
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(91,60,220,.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(39,78,210,.10),
+            transparent 30%
+        );
+
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.08;
+
     background-image:
         radial-gradient(
-            rgba(255,255,255,.8) 1px,
+            white 1px,
             transparent 1px
         );
+
     background-size:90px 90px;
-    opacity:.045;
-    z-index:-10;
+
+    z-index:-1;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 button{
@@ -51,30 +87,39 @@ button{
 }
 
 
-/* =========================
+/* ==============================
    CONTAINER
-========================= */
+============================== */
 
 .container{
-    width:min(1180px,calc(100% - 30px));
+    width:min(
+        1200px,
+        calc(100% - 30px)
+    );
+
     margin:auto;
 }
 
 
-/* =========================
+/* ==============================
    HEADER
-========================= */
+============================== */
 
 header{
+
     position:fixed;
+
     top:0;
     right:0;
     left:0;
+
     z-index:1000;
 
-    background:rgba(7,7,11,.55);
+    background:
+        rgba(7,7,13,.72);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     border-bottom:
         1px solid
@@ -84,14 +129,17 @@ header{
 }
 
 header.scrolled{
-    background:rgba(7,7,11,.94);
+
+    background:
+        rgba(7,7,13,.95);
 
     box-shadow:
         0 15px 50px
-        rgba(0,0,0,.4);
+        rgba(0,0,0,.35);
 }
 
 .nav{
+
     min-height:78px;
 
     display:flex;
@@ -103,17 +151,22 @@ header.scrolled{
     gap:20px;
 }
 
+
+/* LOGO */
+
 .brand{
+
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:11px;
 }
 
 .logo{
-    width:47px;
-    height:47px;
+
+    width:48px;
+    height:48px;
 
     display:grid;
 
@@ -121,65 +174,79 @@ header.scrolled{
 
     border-radius:15px;
 
-    font-size:23px;
+    font-size:26px;
 
     font-weight:900;
 
     background:
         linear-gradient(
             135deg,
-            #8d5cff,
-            #365ee8
+            #8355ff,
+            #3a5eea
         );
 
     box-shadow:
         0 10px 35px
-        rgba(113,73,245,.3);
+        rgba(100,70,240,.35);
 }
 
 .brand-text strong{
+
     display:block;
+
     font-size:17px;
+
 }
 
 .brand-text span{
-    color:#858590;
+
+    display:block;
+
+    color:#777783;
+
     font-size:9px;
+
+    margin-top:3px;
 }
 
+
+/* NAV */
+
 .nav-links{
+
     display:flex;
 
     align-items:center;
 
-    gap:27px;
+    gap:28px;
 }
 
 .nav-links a{
-    color:#aaaab5;
+
+    color:#9999a5;
+
     font-size:12px;
+
     transition:.25s;
 }
 
 .nav-links a:hover{
+
     color:#fff;
 }
 
-.nav-actions{
-    display:flex;
 
-    align-items:center;
-
-    gap:9px;
-}
+/* LOGIN */
 
 .login-btn{
-    padding:10px 16px;
+
+    padding:
+        11px 17px;
 
     border-radius:12px;
 
     background:
-        rgba(255,255,255,.05);
+        rgba(255,255,255,.045);
 
     border:
         1px solid
@@ -191,19 +258,25 @@ header.scrolled{
 }
 
 .login-btn:hover{
-    background:
-        rgba(255,255,255,.1);
 
-    transform:translateY(-2px);
+    background:
+        rgba(255,255,255,.09);
+
+    transform:
+        translateY(-2px);
 }
 
+
+/* MOBILE */
+
 .mobile-menu{
+
     display:none;
 
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
 
-    border-radius:12px;
+    border-radius:13px;
 
     color:#fff;
 
@@ -214,114 +287,59 @@ header.scrolled{
         1px solid
         rgba(255,255,255,.08);
 
-    font-size:20px;
+    font-size:21px;
 
     cursor:pointer;
 }
 
 
-/* =========================
-   MOBILE MENU
-========================= */
-
-.mobile-nav{
-    display:none;
-
-    position:fixed;
-
-    top:88px;
-
-    right:15px;
-    left:15px;
-
-    z-index:999;
-
-    padding:10px;
-
-    border-radius:17px;
-
-    background:
-        rgba(12,12,18,.97);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.5);
-}
-
-.mobile-nav.active{
-    display:block;
-}
-
-.mobile-nav a{
-    display:block;
-
-    padding:13px;
-
-    border-radius:10px;
-
-    color:#aaaab5;
-
-    font-size:12px;
-}
-
-.mobile-nav a:hover{
-    color:#fff;
-
-    background:
-        rgba(255,255,255,.05);
-}
-
-
-/* =========================
+/* ==============================
    HERO
-========================= */
+============================== */
 
 .hero{
+
+    min-height:790px;
+
+    padding-top:120px;
+
     position:relative;
 
-    min-height:820px;
-
-    padding:125px 0 70px;
+    overflow:hidden;
 
     display:flex;
 
     align-items:center;
-
-    overflow:hidden;
 }
 
 .hero::before{
+
     content:"";
 
     position:absolute;
 
-    width:750px;
-    height:750px;
+    width:600px;
+    height:600px;
 
-    left:-350px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
+    left:-280px;
+    top:100px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(112,72,245,.24),
+            rgba(103,67,245,.27),
             transparent 68%
         );
 
     filter:blur(25px);
+
+    pointer-events:none;
 }
 
 .hero::after{
+
     content:"";
 
     position:absolute;
@@ -329,41 +347,85 @@ header.scrolled{
     width:500px;
     height:500px;
 
-    right:-250px;
-    top:-150px;
+    right:-280px;
+    top:-180px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(45,80,220,.13),
+            rgba(43,75,220,.15),
             transparent 70%
         );
 
-    filter:blur(20px);
+    pointer-events:none;
 }
 
 
-/* =========================
-   HERO CONTENT
-   الكلام ناحية اليمين
-========================= */
+/* ==============================
+   HERO LAYOUT
 
-.hero-content{
+   اليمين = الكلام
+   الشمال = الصورة
+============================== */
+
+.hero-layout{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
 
     position:relative;
 
-    z-index:20;
+    z-index:5;
+}
 
-    width:50%;
 
-    margin-right:0;
+/* ==============================
+   TEXT
+============================== */
 
-    margin-left:auto;
+.hero-content{
 
     text-align:right;
+
+    padding-right:20px;
+
+    animation:
+        textIn .9s ease both;
 }
+
+@keyframes textIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
+}
+
+
+/* BADGE */
 
 .badge{
 
@@ -373,18 +435,19 @@ header.scrolled{
 
     gap:8px;
 
-    padding:8px 13px;
+    padding:
+        9px 14px;
 
     margin-bottom:22px;
 
-    border-radius:100px;
+    border-radius:50px;
 
-    color:#c5b5ff;
+    color:#c5b7ff;
 
     font-size:10px;
 
     background:
-        rgba(115,73,245,.1);
+        rgba(115,73,245,.10);
 
     border:
         1px solid
@@ -398,33 +461,44 @@ header.scrolled{
 
     border-radius:50%;
 
-    background:#956fff;
+    background:#936dff;
 
     box-shadow:
         0 0 18px
-        #956fff;
+        #936dff;
 
-    animation:pulse 1.8s infinite;
+    animation:
+        pulse 1.8s infinite;
 }
 
 @keyframes pulse{
 
     0%,100%{
+
         transform:scale(.8);
+
         opacity:.6;
     }
 
     50%{
+
         transform:scale(1.2);
+
         opacity:1;
     }
-
 }
 
-.hero h1{
+
+/* TITLE */
+
+.hero-content h1{
 
     font-size:
-        clamp(45px,6vw,76px);
+        clamp(
+            43px,
+            5.5vw,
+            75px
+        );
 
     line-height:1.08;
 
@@ -432,17 +506,17 @@ header.scrolled{
 
     letter-spacing:-2px;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
-.hero-highlight{
+.highlight{
 
     background:
         linear-gradient(
             90deg,
             #fff,
-            #ad8cff,
-            #7193ff
+            #a989ff,
+            #6f8cff
         );
 
     -webkit-background-clip:text;
@@ -452,26 +526,29 @@ header.scrolled{
     color:transparent;
 }
 
+
+/* DESCRIPTION */
+
 .hero-description{
 
-    color:#a0a0ac;
+    color:#9d9da8;
 
-    font-size:15px;
+    font-size:14px;
 
     line-height:2;
 
-    max-width:620px;
-
-    margin-right:0;
-
-    margin-left:auto;
+    max-width:570px;
 
     margin-bottom:28px;
 }
 
 .hero-description strong{
-    color:#d7ceff;
+
+    color:#d8d0ff;
 }
+
+
+/* BUTTONS */
 
 .hero-buttons{
 
@@ -486,9 +563,10 @@ header.scrolled{
 
 .primary-btn{
 
-    min-height:51px;
+    min-height:52px;
 
-    padding:0 23px;
+    padding:
+        0 24px;
 
     display:inline-flex;
 
@@ -504,38 +582,38 @@ header.scrolled{
 
     font-size:12px;
 
-    font-weight:800;
+    font-weight:bold;
 
     background:
         linear-gradient(
             135deg,
-            #8257f5,
-            #365ee8
+            #8155f5,
+            #345fe9
         );
 
     box-shadow:
         0 15px 40px
-        rgba(91,65,220,.3);
+        rgba(91,65,220,.32);
 
     transition:.3s;
-
-    cursor:pointer;
 }
 
 .primary-btn:hover{
 
-    transform:translateY(-4px);
+    transform:
+        translateY(-4px);
 
     box-shadow:
         0 20px 55px
-        rgba(91,65,220,.45);
+        rgba(91,65,220,.48);
 }
 
 .secondary-btn{
 
-    min-height:51px;
+    min-height:52px;
 
-    padding:0 22px;
+    padding:
+        0 23px;
 
     display:inline-flex;
 
@@ -550,7 +628,7 @@ header.scrolled{
     font-size:12px;
 
     background:
-        rgba(255,255,255,.045);
+        rgba(255,255,255,.04);
 
     border:
         1px solid
@@ -564,100 +642,111 @@ header.scrolled{
     background:
         rgba(255,255,255,.08);
 
-    transform:translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
-/* =====================================================
-   TEACHER HERO
-   الصورة ناحية الشمال
-   الكلام منفصل ناحية اليمين
-===================================================== */
+/* ==============================
+   TEACHER IMAGE
+   الشمال
+============================== */
 
-.teacher-hero{
+.teacher-area{
 
-    position:absolute;
+    min-height:560px;
 
-    left:-20px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    width:620px;
-
-    height:620px;
-
-    z-index:5;
+    position:relative;
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    animation:
+        imageIn 1s ease both;
+}
+
+@keyframes imageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(0);
+
+    }
 }
 
 
-/* الإضاءة */
+/* GLOW */
 
 .teacher-glow{
 
     position:absolute;
 
-    width:540px;
-    height:540px;
-
-    left:30px;
-    top:40px;
+    width:500px;
+    height:500px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(116,73,245,.30),
+            rgba(110,71,245,.35),
             transparent 68%
         );
 
     filter:blur(25px);
 
     animation:
-        glowMove 5s ease-in-out infinite;
+        glow 5s ease-in-out infinite;
 }
 
-@keyframes glowMove{
+@keyframes glow{
 
     0%,100%{
+
         transform:scale(1);
+
     }
 
     50%{
-        transform:scale(1.08);
+
+        transform:scale(1.1);
+
     }
 }
 
 
-/* الحلقة */
+/* RING */
 
 .teacher-ring{
 
     position:absolute;
 
-    width:530px;
-    height:530px;
-
-    left:15px;
-    top:45px;
+    width:510px;
+    height:510px;
 
     border-radius:50%;
 
     border:
         1px solid
-        rgba(146,112,255,.22);
+        rgba(147,111,255,.22);
 
     animation:
-        rotateRing 18s linear infinite;
+        ringRotate 18s linear infinite;
 }
 
 .teacher-ring::before{
@@ -671,17 +760,17 @@ header.scrolled{
 
     border-radius:50%;
 
-    top:12%;
-    right:15%;
+    right:12%;
+    top:18%;
 
-    background:#a98cff;
+    background:#a78cff;
 
     box-shadow:
-        0 0 22px
-        #a98cff;
+        0 0 25px
+        #a78cff;
 }
 
-@keyframes rotateRing{
+@keyframes ringRotate{
 
     from{
         transform:rotate(0deg);
@@ -693,46 +782,45 @@ header.scrolled{
 }
 
 
-/* =====================================================
-   الصورة فقط
-   بدون كلام فوقها
-===================================================== */
+/* ==============================
+   IMAGE
+============================== */
 
 .teacher-image{
+
+    width:400px;
+
+    height:530px;
 
     position:relative;
 
     z-index:10;
 
-    width:410px;
-
-    height:540px;
-
     overflow:hidden;
 
-    border-radius:32px;
+    border-radius:30px;
 
     background:
         linear-gradient(
             145deg,
-            #29214c,
-            #101322
+            #211a3d,
+            #0d1120
         );
 
     border:
         2px solid
-        rgba(177,148,255,.40);
+        rgba(176,147,255,.34);
 
     box-shadow:
 
         0 35px 100px
         rgba(0,0,0,.65),
 
-        0 0 90px
-        rgba(112,73,245,.30);
+        0 0 80px
+        rgba(106,71,240,.27);
 
     animation:
-        floatTeacher 4s ease-in-out infinite;
+        teacherFloat 4.5s ease-in-out infinite;
 
     transition:.5s;
 }
@@ -741,15 +829,15 @@ header.scrolled{
 
     transform:
         translateY(-8px)
-        scale(1.025);
+        scale(1.02);
 
     box-shadow:
 
-        0 45px 115px
+        0 45px 120px
         rgba(0,0,0,.7),
 
         0 0 110px
-        rgba(112,73,245,.45);
+        rgba(106,71,240,.4);
 }
 
 .teacher-image img{
@@ -758,23 +846,24 @@ header.scrolled{
 
     height:100%;
 
-    display:block;
-
     object-fit:cover;
 
     object-position:center;
 
+    display:block;
+
     transition:
-        transform .8s ease;
+        transform .7s ease;
 }
 
 .teacher-image:hover img{
 
-    transform:scale(1.045);
+    transform:
+        scale(1.04);
 }
 
 
-/* لمعة الصورة */
+/* IMAGE SHINE */
 
 .teacher-image::after{
 
@@ -783,31 +872,32 @@ header.scrolled{
     position:absolute;
 
     top:-120%;
-    left:-120%;
+    left:-130%;
 
-    width:55%;
-    height:300%;
+    width:50%;
+    height:320%;
 
-    transform:rotate(28deg);
+    transform:
+        rotate(25deg);
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.22),
+            rgba(255,255,255,.20),
             transparent
         );
 
     animation:
-        imageShine 5s ease-in-out infinite;
+        shine 5s ease-in-out infinite;
 
     pointer-events:none;
 }
 
-@keyframes imageShine{
+@keyframes shine{
 
     0%{
-        left:-120%;
+        left:-130%;
     }
 
     45%,100%{
@@ -815,7 +905,7 @@ header.scrolled{
     }
 }
 
-@keyframes floatTeacher{
+@keyframes teacherFloat{
 
     0%,100%{
         transform:
@@ -829,26 +919,22 @@ header.scrolled{
 }
 
 
-/* =====================================================
-   ملاحظة مهمة:
-   لا يوجد أي كلام فوق الصورة هنا.
-===================================================== */
+/* ==============================
+   FEATURES UNDER HERO
+============================== */
 
-
-/* =========================
-   STATS
-========================= */
-
-.stats{
+.quick-features{
 
     position:relative;
 
     z-index:20;
 
-    margin-top:-25px;
+    margin-top:-5px;
+
+    padding-bottom:40px;
 }
 
-.stats-grid{
+.quick-grid{
 
     display:grid;
 
@@ -858,11 +944,23 @@ header.scrolled{
     gap:12px;
 }
 
-.stat-card{
+.quick-card{
 
-    padding:23px;
+    min-height:130px;
 
-    border-radius:19px;
+    padding:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    border-radius:20px;
 
     background:
         rgba(255,255,255,.035);
@@ -871,103 +969,119 @@ header.scrolled{
         1px solid
         rgba(255,255,255,.065);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+        blur(15px);
+
+    transition:.3s;
 
     opacity:0;
 
-    transform:translateY(25px);
-
-    transition:.7s;
+    transform:
+        translateY(25px);
 }
 
-.stat-card.show{
+.quick-card.show{
 
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+        translateY(0);
 }
 
-.stat-card strong{
+.quick-card:hover{
 
-    display:block;
+    transform:
+        translateY(-6px);
 
-    font-size:25px;
+    border-color:
+        rgba(130,95,255,.30);
 
-    margin-bottom:6px;
+    background:
+        rgba(255,255,255,.055);
 }
 
-.stat-card span{
+.quick-icon{
 
-    color:#8e8e99;
+    width:48px;
+    height:48px;
 
-    font-size:11px;
+    display:grid;
+
+    place-items:center;
+
+    margin-bottom:12px;
+
+    border-radius:14px;
+
+    font-size:22px;
+
+    background:
+        rgba(119,75,240,.11);
+}
+
+.quick-card h3{
+
+    font-size:13px;
+
+    margin-bottom:5px;
+}
+
+.quick-card p{
+
+    color:#777782;
+
+    font-size:9px;
 }
 
 
-/* =========================
+/* ==============================
    SECTIONS
-========================= */
+============================== */
 
 section{
-    padding:105px 0;
+
+    padding:95px 0;
 }
 
 .section-head{
 
-    display:flex;
+    margin-bottom:32px;
 
-    align-items:end;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    margin-bottom:35px;
+    text-align:right;
 }
 
-.section-title small{
+.section-head small{
 
-    display:block;
-
-    color:#8968ff;
+    color:#8c6bff;
 
     font-size:10px;
 
-    font-weight:800;
-
-    margin-bottom:8px;
+    font-weight:bold;
 }
 
-.section-title h2{
+.section-head h2{
 
     font-size:
-        clamp(28px,4vw,42px);
+        clamp(
+            28px,
+            4vw,
+            43px
+        );
 
-    margin-bottom:8px;
+    margin:9px 0;
 }
 
-.section-title p{
+.section-head p{
 
-    color:#878792;
+    color:#858591;
 
     font-size:12px;
 }
 
-.view-all{
 
-    color:#aa92ff;
-
-    font-size:11px;
-}
-
-
-/* =========================
+/* ==============================
    COURSES
-========================= */
-
-#courses{
-    scroll-margin-top:90px;
-}
+============================== */
 
 .courses-grid{
 
@@ -992,86 +1106,77 @@ section{
         1px solid
         rgba(255,255,255,.065);
 
+    transition:.35s;
+
     opacity:0;
 
-    transform:translateY(35px);
-
-    transition:.7s;
+    transform:
+        translateY(30px);
 }
 
 .course-card.show{
 
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+        translateY(0);
 }
 
 .course-card:hover{
 
-    transform:translateY(-7px);
+    transform:
+        translateY(-7px);
 
     border-color:
         rgba(137,102,255,.28);
-
-    box-shadow:
-        0 25px 65px
-        rgba(0,0,0,.28);
 }
 
 .course-image{
 
-    position:relative;
-
-    height:200px;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #19142d,
-            #10182e
-        );
-}
-
-.course-level{
-
-    position:absolute;
-
-    top:13px;
-
-    right:13px;
-
-    z-index:2;
-
-    padding:6px 10px;
-
-    border-radius:9px;
-
-    background:
-        rgba(0,0,0,.45);
-
-    font-size:10px;
-}
-
-.formula{
-
-    position:absolute;
-
-    inset:0;
+    height:190px;
 
     display:grid;
 
     place-items:center;
 
+    position:relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b1531,
+            #11172c
+        );
+
+    overflow:hidden;
+}
+
+.course-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(109,73,240,.16);
+
+    filter:blur(20px);
+}
+
+.formula{
+
+    position:relative;
+
     font-family:serif;
 
-    font-size:49px;
+    font-size:47px;
 
-    font-weight:900;
-
-    color:
-        rgba(255,255,255,.86);
+    font-weight:bold;
 
     animation:
         formulaFloat 4s ease-in-out infinite;
@@ -1088,7 +1193,29 @@ section{
     }
 }
 
+.course-level{
+
+    position:absolute;
+
+    top:13px;
+
+    right:13px;
+
+    z-index:2;
+
+    padding:
+        6px 10px;
+
+    border-radius:9px;
+
+    background:
+        rgba(0,0,0,.4);
+
+    font-size:9px;
+}
+
 .course-body{
+
     padding:19px;
 }
 
@@ -1096,14 +1223,14 @@ section{
 
     font-size:16px;
 
-    margin-bottom:7px;
+    margin-bottom:8px;
 }
 
 .course-body p{
 
-    min-height:45px;
+    min-height:42px;
 
-    color:#8c8c97;
+    color:#858591;
 
     font-size:11px;
 
@@ -1114,13 +1241,14 @@ section{
 
     display:flex;
 
-    gap:12px;
+    gap:10px;
 
-    color:#7f7f8a;
+    margin:
+        14px 0;
+
+    color:#777782;
 
     font-size:9px;
-
-    margin:15px 0;
 }
 
 .course-footer{
@@ -1134,20 +1262,19 @@ section{
 
 .course-price{
 
-    color:#d5d5dc;
+    color:#cfcfd8;
 
     font-size:10px;
-
-    font-weight:800;
 }
 
 .course-link{
 
-    padding:8px 12px;
+    padding:
+        8px 12px;
 
     border-radius:9px;
 
-    color:#b9a7ff;
+    color:#bcaaff;
 
     background:
         rgba(116,72,232,.11);
@@ -1156,152 +1283,33 @@ section{
 }
 
 
-/* =========================
-   FEATURES
-========================= */
-
-.features{
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(255,255,255,.014),
-            transparent
-        );
-}
-
-.features-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:15px;
-}
-
-.feature-card{
-
-    padding:27px;
-
-    border-radius:20px;
-
-    background:
-        rgba(255,255,255,.028);
-
-    border:
-        1px solid
-        rgba(255,255,255,.06);
-
-    opacity:0;
-
-    transform:translateY(30px);
-
-    transition:.7s;
-}
-
-.feature-card.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-.feature-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:
-        rgba(116,72,232,.25);
-}
-
-.feature-icon{
-
-    width:50px;
-    height:50px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:14px;
-
-    margin-bottom:18px;
-
-    font-size:21px;
-
-    background:
-        rgba(116,72,232,.11);
-
-    border:
-        1px solid
-        rgba(116,72,232,.16);
-}
-
-.feature-card h3{
-
-    font-size:15px;
-
-    margin-bottom:8px;
-}
-
-.feature-card p{
-
-    color:#858591;
-
-    font-size:11px;
-
-    line-height:1.9;
-}
-
-
-/* =========================
+/* ==============================
    MOTIVATION
-========================= */
+============================== */
 
-.motivation-box{
+.motivation{
 
     position:relative;
 
-    min-height:330px;
-
-    padding:50px;
-
-    display:flex;
-
-    align-items:center;
-
     overflow:hidden;
 
-    border-radius:29px;
+    border-radius:28px;
+
+    padding:55px;
 
     background:
         linear-gradient(
             135deg,
             rgba(116,72,232,.14),
-            rgba(43,83,220,.065)
+            rgba(44,77,210,.06)
         );
 
     border:
         1px solid
         rgba(139,106,255,.17);
-
-    opacity:0;
-
-    transform:translateY(30px);
-
-    transition:.8s;
 }
 
-.motivation-box.show{
-
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-.motivation-box::before{
+.motivation::before{
 
     content:"π";
 
@@ -1309,11 +1317,11 @@ section{
 
     left:20px;
 
-    bottom:-110px;
+    bottom:-140px;
 
     font-family:serif;
 
-    font-size:360px;
+    font-size:400px;
 
     color:
         rgba(255,255,255,.025);
@@ -1325,31 +1333,35 @@ section{
 
     z-index:2;
 
-    max-width:730px;
+    max-width:760px;
+
+    text-align:right;
 }
 
 .motivation-content small{
 
-    color:#9a7cff;
+    color:#9675ff;
 
     font-size:10px;
-
-    font-weight:800;
 }
 
 .motivation-content h2{
 
     font-size:
-        clamp(28px,4vw,43px);
+        clamp(
+            28px,
+            4vw,
+            43px
+        );
 
-    line-height:1.3;
+    line-height:1.4;
 
-    margin:10px 0 13px;
+    margin:10px 0 15px;
 }
 
 .motivation-content p{
 
-    color:#9d9da9;
+    color:#9696a2;
 
     font-size:13px;
 
@@ -1362,26 +1374,27 @@ section{
 
     display:inline-block;
 
-    padding:11px 15px;
+    padding:
+        11px 15px;
 
     border-radius:12px;
 
-    color:#d5ccff;
-
-    font-size:11px;
+    color:#d7ceff;
 
     background:
-        rgba(255,255,255,.045);
+        rgba(255,255,255,.04);
 
     border:
         1px solid
         rgba(255,255,255,.07);
+
+    font-size:11px;
 }
 
 
-/* =========================
+/* ==============================
    TEACHER SECTION
-========================= */
+============================== */
 
 .teacher-section{
 
@@ -1393,114 +1406,77 @@ section{
     gap:70px;
 
     align-items:center;
-
-    opacity:0;
-
-    transform:translateY(30px);
-
-    transition:.8s;
 }
 
-.teacher-section.show{
+.teacher-section-photo{
 
-    opacity:1;
+    display:flex;
 
-    transform:translateY(0);
-}
-
-.teacher-section-image{
+    justify-content:center;
 
     position:relative;
-
-    min-height:430px;
-
-    display:grid;
-
-    place-items:center;
 }
 
-.section-ring{
+.teacher-section-photo img{
 
-    position:absolute;
+    width:310px;
 
-    width:330px;
-    height:330px;
+    height:390px;
 
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(139,106,255,.18);
-
-    animation:
-        rotateRing 18s linear infinite;
-}
-
-.section-teacher-photo{
-
-    position:relative;
-
-    z-index:2;
-
-    width:280px;
-    height:350px;
-
-    overflow:hidden;
+    object-fit:cover;
 
     border-radius:
-        140px 140px 95px 95px;
+        150px 150px 100px 100px;
 
     border:
         2px solid
-        rgba(173,145,255,.2);
+        rgba(173,145,255,.22);
 
     box-shadow:
-        0 25px 80px
-        rgba(0,0,0,.4);
+        0 30px 90px
+        rgba(0,0,0,.5);
 
     animation:
-        floatTeacher 4.5s ease-in-out infinite;
+        teacherFloat 4.5s ease-in-out infinite;
 }
 
-.section-teacher-photo img{
+.teacher-text{
 
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
+    text-align:right;
 }
 
-.teacher-info small{
+.teacher-text small{
 
-    color:#8d6bff;
+    color:#8c6bff;
 
     font-size:10px;
-
-    font-weight:800;
 }
 
-.teacher-info h2{
+.teacher-text h2{
 
     font-size:
-        clamp(32px,4vw,46px);
+        clamp(
+            32px,
+            4vw,
+            47px
+        );
 
-    margin:10px 0 15px;
+    margin:
+        10px 0 15px;
 }
 
-.teacher-info p{
+.teacher-text p{
 
-    max-width:620px;
-
-    color:#9999a5;
+    color:#9797a2;
 
     font-size:13px;
 
-    line-height:2.1;
+    line-height:2;
 
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
-.teacher-points{
+.points{
 
     display:grid;
 
@@ -1510,36 +1486,37 @@ section{
     gap:10px;
 }
 
-.teacher-point{
+.point{
 
-    padding:13px 14px;
+    padding:14px;
 
     border-radius:13px;
 
-    color:#c6c6cf;
-
-    font-size:10px;
-
     background:
-        rgba(255,255,255,.032);
+        rgba(255,255,255,.03);
 
     border:
         1px solid
         rgba(255,255,255,.06);
+
+    color:#c7c7d0;
+
+    font-size:10px;
 }
 
 
-/* =========================
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 footer{
 
-    padding:55px 0 23px;
+    padding:
+        55px 0 25px;
 
     border-top:
         1px solid
-        rgba(255,255,255,.055);
+        rgba(255,255,255,.06);
 }
 
 .footer-grid{
@@ -1547,7 +1524,10 @@ footer{
     display:grid;
 
     grid-template-columns:
-        1.5fr 1fr 1fr 1fr;
+        1.5fr
+        1fr
+        1fr
+        1fr;
 
     gap:35px;
 
@@ -1556,9 +1536,9 @@ footer{
 
 .footer-brand p{
 
-    max-width:330px;
+    max-width:350px;
 
-    color:#70707b;
+    color:#6f6f7a;
 
     font-size:10px;
 
@@ -1571,25 +1551,28 @@ footer{
 
     font-size:12px;
 
-    margin-bottom:14px;
+    margin-bottom:15px;
 }
 
 .footer-col a{
 
     display:block;
 
-    color:#73737f;
+    color:#73737e;
 
     font-size:10px;
 
-    margin-bottom:9px;
+    margin-bottom:10px;
 }
 
 .footer-col a:hover{
+
     color:#fff;
 }
 
 .copyright{
+
+    text-align:center;
 
     padding-top:20px;
 
@@ -1597,63 +1580,61 @@ footer{
         1px solid
         rgba(255,255,255,.05);
 
-    text-align:center;
-
-    color:#5f5f6a;
+    color:#5c5c68;
 
     font-size:9px;
 }
 
 
-/* =========================
+/* ==============================
    TABLET
-========================= */
-
-@media(max-width:1050px){
-
-    .hero-content{
-
-        width:52%;
-    }
-
-    .teacher-hero{
-
-        left:-80px;
-
-        transform:
-            translateY(-50%)
-            scale(.82);
-    }
-
-}
-
-
-/* =========================
-   TABLET
-========================= */
+============================== */
 
 @media(max-width:900px){
 
     .nav-links{
+
         display:none;
     }
 
     .mobile-menu{
+
         display:block;
     }
 
     .hero{
 
-        min-height:800px;
+        min-height:auto;
+
+        padding-top:125px;
+
+        padding-bottom:40px;
     }
+
+    .hero-layout{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+        display:flex;
+
+        flex-direction:column;
+    }
+
+    /*
+       على التابلت والموبايل:
+       الكلام أولًا
+       الصورة بعده
+    */
 
     .hero-content{
 
-        width:100%;
+        order:1;
 
         text-align:center;
 
-        z-index:30;
+        padding:0;
     }
 
     .hero-description{
@@ -1668,30 +1649,22 @@ footer{
         justify-content:center;
     }
 
-    .teacher-hero{
+    .teacher-area{
 
-        left:50%;
+        order:2;
 
-        transform:
-            translate(-50%,-50%)
-            scale(.72);
+        width:100%;
 
-        opacity:.22;
+        min-height:510px;
     }
 
-    .stats-grid{
+    .quick-grid{
 
         grid-template-columns:
             repeat(2,1fr);
     }
 
     .courses-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .features-grid{
 
         grid-template-columns:
             repeat(2,1fr);
@@ -1704,9 +1677,17 @@ footer{
         text-align:center;
     }
 
-    .teacher-info p{
+    .teacher-text{
+
+        text-align:center;
+    }
+
+    .teacher-text p{
+
+        max-width:650px;
 
         margin-left:auto;
+
         margin-right:auto;
     }
 
@@ -1715,44 +1696,92 @@ footer{
         grid-template-columns:
             repeat(2,1fr);
     }
-
 }
 
 
-/* =========================
+/* ==============================
    MOBILE
-========================= */
+============================== */
 
 @media(max-width:600px){
 
     .container{
 
         width:
-            calc(100% - 22px);
+            calc(100% - 20px);
+    }
+
+    .nav{
+
+        min-height:70px;
+    }
+
+    .logo{
+
+        width:44px;
+        height:44px;
+    }
+
+    .brand-text strong{
+
+        font-size:15px;
+    }
+
+    .login-btn{
+
+        padding:
+            10px 13px;
+
+        font-size:10px;
     }
 
     .hero{
 
-        min-height:760px;
+        padding-top:105px;
 
-        padding-top:115px;
+        padding-bottom:20px;
     }
 
-    .hero h1{
+    .hero-layout{
+
+        gap:5px;
+    }
+
+    .hero-content{
+
+        width:100%;
+    }
+
+    .badge{
+
+        font-size:9px;
+
+        margin-bottom:17px;
+    }
+
+    .hero-content h1{
 
         font-size:40px;
 
         letter-spacing:-1px;
+
+        margin-bottom:17px;
     }
 
     .hero-description{
 
         font-size:11px;
+
+        line-height:2;
+
+        padding:0 8px;
     }
 
     .hero-buttons{
 
         flex-direction:column;
+
+        width:100%;
     }
 
     .primary-btn,
@@ -1761,125 +1790,137 @@ footer{
         width:100%;
     }
 
-    .teacher-hero{
+    .teacher-area{
 
-        top:58%;
-
-        transform:
-            translate(-50%,-50%)
-            scale(.55);
-
-        opacity:.17;
+        min-height:440px;
     }
 
-    .stats-grid{
+    .teacher-glow{
+
+        width:370px;
+        height:370px;
+    }
+
+    .teacher-ring{
+
+        width:380px;
+        height:380px;
+    }
+
+    .teacher-image{
+
+        width:285px;
+
+        height:380px;
+
+        border-radius:25px;
+    }
+
+    .quick-grid{
 
         gap:8px;
     }
 
-    .stat-card{
+    .quick-card{
 
-        padding:17px 10px;
+        min-height:115px;
+
+        padding:15px 8px;
     }
 
-    .stat-card strong{
+    .quick-icon{
 
-        font-size:20px;
+        width:42px;
+        height:42px;
+
+        font-size:19px;
     }
 
-    .stat-card span{
+    .quick-card h3{
 
-        font-size:9px;
+        font-size:11px;
+    }
+
+    .quick-card p{
+
+        font-size:8px;
     }
 
     section{
 
-        padding:75px 0;
+        padding:70px 0;
     }
 
-    .courses-grid,
-    .features-grid{
+    .courses-grid{
 
         grid-template-columns:1fr;
     }
 
-    .section-head{
+    .course-image{
 
-        display:block;
+        height:180px;
     }
 
-    .view-all{
-
-        display:inline-block;
-
-        margin-top:13px;
-    }
-
-    .motivation-box{
+    .motivation{
 
         padding:32px 20px;
     }
 
-    .teacher-section-image{
+    .motivation-content h2{
 
-        min-height:370px;
+        font-size:27px;
     }
 
-    .section-ring{
+    .motivation-content p{
 
-        width:280px;
-        height:280px;
+        font-size:11px;
     }
 
-    .section-teacher-photo{
+    .teacher-section-photo img{
 
-        width:235px;
-        height:300px;
+        width:250px;
+
+        height:320px;
     }
 
-    .teacher-points{
+    .points{
 
         grid-template-columns:1fr;
-
-        text-align:right;
     }
 
     .footer-grid{
 
         grid-template-columns:1fr;
     }
-
 }
 
 
-/* =========================
-   DATABASE PLACE
-========================= */
+/* ==============================
+   DATABASE AREA
 
-/*
+   بعدين هنربط هنا Supabase
 
-هنا لاحقًا هنربط Supabase:
+   مثال:
 
-const SUPABASE_URL =
-"https://YOUR-PROJECT.supabase.co";
+   const SUPABASE_URL =
+   "https://YOUR-PROJECT.supabase.co";
 
-const SUPABASE_ANON_KEY =
-"YOUR-ANON-KEY";
+   const SUPABASE_ANON_KEY =
+   "YOUR-ANON-KEY";
 
-ومن قاعدة البيانات هنجيب:
+   ونجيب من قاعدة البيانات:
 
-1- الكورسات
-2- الدروس
-3- الفيديوهات
-4- ملفات PDF
-5- الاختبارات
-6- نتائج الطالب
-7- بيانات الطالب
-8- صورة الطالب
-9- نسبة مشاهدة الكورس
-10- حالة الاشتراك
+   - الكورسات
+   - الفيديوهات
+   - PDF
+   - الاختبارات
+   - نتائج الطلاب
+   - صور الطلاب
+   - بيانات الحساب
+   - نسبة المشاهدة
+   - الاشتراكات
 
-*/
+============================== */
 
 </style>
 </head>
@@ -1888,9 +1929,9 @@ const SUPABASE_ANON_KEY =
 <body>
 
 
-<!-- =========================
+<!-- ==============================
      HEADER
-========================= -->
+============================== -->
 
 <header id="header">
 
@@ -1898,10 +1939,14 @@ const SUPABASE_ANON_KEY =
 
 <nav class="nav">
 
-<a href="#home" class="brand">
+
+<a
+href="#home"
+class="brand"
+>
 
 <div class="logo">
-∑
+Σ
 </div>
 
 <div class="brand-text">
@@ -1930,7 +1975,7 @@ const SUPABASE_ANON_KEY =
 </a>
 
 <a href="#features">
-مميزاتنا
+مميزات المنصة
 </a>
 
 <a href="#teacher">
@@ -1940,7 +1985,11 @@ const SUPABASE_ANON_KEY =
 </div>
 
 
-<div class="nav-actions">
+<div style="
+display:flex;
+align-items:center;
+gap:8px;
+">
 
 <a
 href="auth.html"
@@ -1958,6 +2007,7 @@ id="mobileMenu"
 
 </div>
 
+
 </nav>
 
 </div>
@@ -1965,41 +2015,9 @@ id="mobileMenu"
 </header>
 
 
-<!-- =========================
-     MOBILE NAV
-========================= -->
-
-<div
-class="mobile-nav"
-id="mobileNav"
->
-
-<a href="#home">
-الرئيسية
-</a>
-
-<a href="#courses">
-الكورسات
-</a>
-
-<a href="#features">
-مميزاتنا
-</a>
-
-<a href="#teacher">
-المستر أمير
-</a>
-
-<a href="auth.html">
-تسجيل الدخول
-</a>
-
-</div>
-
-
-<!-- =========================
+<!-- ==============================
      HERO
-========================= -->
+============================== -->
 
 <main id="home">
 
@@ -2007,10 +2025,15 @@ id="mobileNav"
 
 <div class="container">
 
+<div class="hero-layout">
 
-<!-- الكلام ناحية اليمين -->
+
+<!-- ==========================
+     الكلام ناحية اليمين
+========================== -->
 
 <div class="hero-content">
+
 
 <div class="badge">
 
@@ -2027,7 +2050,7 @@ id="mobileNav"
 
 <br>
 
-<span class="hero-highlight">
+<span class="highlight">
 مفيش مستحيل
 </span>
 
@@ -2041,12 +2064,12 @@ id="mobileNav"
 <br>
 
 <strong>
-هتفهم، هتتدرب، وهتبدأ تشوف المسألة بشكل مختلف.
+هتفهم، هتتدرب، وهتشوف المسألة بشكل مختلف.
 </strong>
 
 <br>
 
-امشي خطوة خطوة، وسيب الباقي علينا.
+خطوة بخطوة لحد ما تبقى واثق في نفسك.
 
 </p>
 
@@ -2056,11 +2079,11 @@ id="mobileNav"
 <a
 href="#courses"
 class="primary-btn"
-id="exploreCourses"
 >
 استكشف الكورسات
 <span>↓</span>
 </a>
+
 
 <a
 href="auth.html"
@@ -2071,15 +2094,15 @@ class="secondary-btn"
 
 </div>
 
+
 </div>
 
 
-<!-- =====================================================
-     الصورة ناحية الشمال فقط
-     مفيش كلام فوقها
-===================================================== -->
+<!-- ==========================
+     الصورة ناحية الشمال
+========================== -->
 
-<div class="teacher-hero">
+<div class="teacher-area">
 
 <div class="teacher-glow"></div>
 
@@ -2100,80 +2123,110 @@ alt="المستر أمير"
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- =========================
-     STATS
-========================= -->
+<!-- ==============================
+     الكروت تحت الصورة
+============================== -->
 
-<div class="stats">
+<section
+class="quick-features"
+id="features"
+>
 
 <div class="container">
 
-<div class="stats-grid">
+<div class="quick-grid">
 
-<div class="stat-card">
 
-<strong>🎥</strong>
+<div class="quick-card">
 
-<span>
+<div class="quick-icon">
+🎥
+</div>
+
+<h3>
 شرح فيديو خطوة بخطوة
-</span>
+</h3>
+
+<p>
+شوف الدرس وقت ما تحب
+</p>
 
 </div>
 
 
-<div class="stat-card">
+<div class="quick-card">
 
-<strong>📚</strong>
+<div class="quick-icon">
+📚
+</div>
 
-<span>
+<h3>
 ملازم وملفات PDF
-</span>
+</h3>
+
+<p>
+كل ملفاتك في مكان واحد
+</p>
 
 </div>
 
 
-<div class="stat-card">
+<div class="quick-card">
 
-<strong>📝</strong>
+<div class="quick-icon">
+📝
+</div>
 
-<span>
-تدريبات واختبارات
-</span>
+<h3>
+اختبارات وتدريبات
+</h3>
+
+<p>
+اختبر نفسك بعد كل درس
+</p>
 
 </div>
 
 
-<div class="stat-card">
+<div class="quick-card">
 
-<strong>📊</strong>
+<div class="quick-icon">
+📊
+</div>
 
-<span>
-متابعة مستواك
-</span>
+<h3>
+تابع مستواك
+</h3>
+
+<p>
+اعرف تقدمك باستمرار
+</p>
+
+</div>
+
 
 </div>
 
 </div>
 
-</div>
-
-</div>
+</section>
 
 
-<!-- =========================
+<!-- ==============================
      COURSES
-========================= -->
+============================== -->
 
 <section id="courses">
 
 <div class="container">
 
-<div class="section-head">
 
-<div class="section-title">
+<div class="section-head">
 
 <small>
 اختار طريقك
@@ -2186,15 +2239,6 @@ alt="المستر أمير"
 <p>
 كل اللي محتاجه عشان تطور مستواك في مكان واحد.
 </p>
-
-</div>
-
-<a
-href="courses.html"
-class="view-all"
->
-كل الكورسات ←
-</a>
 
 </div>
 
@@ -2219,17 +2263,19 @@ x² + y²
 <div class="course-body">
 
 <h3>
-الرياضيات — التأسيس
+التأسيس في الرياضيات
 </h3>
 
 <p>
-نبني الأساس صح ونفهم القواعد بدل ما نحفظها.
+نبني الأساس صح ونفهم القواعد بدل الحفظ.
 </p>
 
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
+
 <span>📄 PDF</span>
+
 <span>📝 تدريب</span>
 
 </div>
@@ -2275,13 +2321,15 @@ class="course-link"
 </h3>
 
 <p>
-نفهم الفكرة الأول وبعدها نحل المسائل واحدة واحدة.
+نفهم الفكرة وبعدها نحل المسائل واحدة واحدة.
 </p>
 
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
+
 <span>📄 PDF</span>
+
 <span>📝 اختبار</span>
 
 </div>
@@ -2327,13 +2375,15 @@ class="course-link"
 </h3>
 
 <p>
-شرح وتدريب على الأفكار المهمة والمسائل المختلفة.
+شرح وتدريب على الأفكار والمسائل المختلفة.
 </p>
 
 <div class="course-meta">
 
 <span>🎥 فيديو</span>
+
 <span>📚 ملفات</span>
+
 <span>📝 اختبارات</span>
 
 </div>
@@ -2365,159 +2415,15 @@ class="course-link"
 </section>
 
 
-<!-- =========================
-     FEATURES
-========================= -->
-
-<section
-id="features"
-class="features"
->
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="section-title">
-
-<small>
-كل حاجة في مكان واحد
-</small>
-
-<h2>
-مش مجرد فيديوهات
-</h2>
-
-<p>
-اتعلم وراجع واختبر نفسك من نفس المكان.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="features-grid">
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-🎥
-</div>
-
-<h3>
-فيديوهات الشرح
-</h3>
-
-<p>
-الدروس موجودة بشكل مرتب وواضح وتشوفها وقت ما تحب.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-📄
-</div>
-
-<h3>
-PDF وملفات
-</h3>
-
-<p>
-ملازم ومراجعات وملفات مرتبطة بكل درس.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-📝
-</div>
-
-<h3>
-اختبارات
-</h3>
-
-<p>
-خلصت الدرس؟ اختبر نفسك وشوف مستواك الحقيقي.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-📈
-</div>
-
-<h3>
-متابعة التقدم
-</h3>
-
-<p>
-اعرف وصلت لفين وخلصت إيه ولسه قدامك إيه.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-👤
-</div>
-
-<h3>
-حسابك الشخصي
-</h3>
-
-<p>
-صورتك وبياناتك وكورساتك ونتائجك في حساب واحد.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-🏆
-</div>
-
-<h3>
-نتائجك
-</h3>
-
-<p>
-تابع درجاتك واعرف مستواك باستمرار.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
+<!-- ==============================
      MOTIVATION
-========================= -->
+============================== -->
 
 <section>
 
 <div class="container">
 
-<div class="motivation-box">
+<div class="motivation">
 
 <div class="motivation-content">
 
@@ -2546,9 +2452,9 @@ PDF وملفات
 <br>
 
 هنفهمها واحدة واحدة، وهنحل كتير،
-ومع الوقت هتلاقي نفسك بتبص للمسألة وتقول:
+ومع الوقت هتلاقي نفسك بتقول:
 
-<strong style="color:#d8d0ff;">
+<strong style="color:#d7ceff">
 دي سهلة يا مستر!
 </strong>
 
@@ -2567,9 +2473,9 @@ PDF وملفات
 </section>
 
 
-<!-- =========================
+<!-- ==============================
      TEACHER
-========================= -->
+============================== -->
 
 <section id="teacher">
 
@@ -2578,11 +2484,7 @@ PDF وملفات
 <div class="teacher-section">
 
 
-<div class="teacher-section-image">
-
-<div class="section-ring"></div>
-
-<div class="section-teacher-photo">
+<div class="teacher-section-photo">
 
 <img
 src="teacher.png"
@@ -2591,10 +2493,8 @@ alt="المستر أمير"
 
 </div>
 
-</div>
 
-
-<div class="teacher-info">
+<div class="teacher-text">
 
 <small>
 مدرسك معاك
@@ -2606,40 +2506,41 @@ alt="المستر أمير"
 
 <p>
 
-بص يا بطل، لو الرياضيات كانت واقفة معاك قبل كده،
+لو الرياضيات كانت واقفة معاك قبل كده،
 متقلقش.
 
-<br><br>
+<br>
 
-هنا هنبدأ من المكان اللي أنت واقف فيه،
-نفهم الفكرة بهدوء، وبعدها نزود المستوى واحدة واحدة.
+هنبدأ من المكان اللي أنت واقف فيه،
+نفهم الفكرة بهدوء،
+وبعدها نزود المستوى واحدة واحدة.
 
-<br><br>
+<br>
 
-المطلوب منك حاجة واحدة بس:
+المطلوب منك حاجة واحدة:
 
-<strong style="color:#d8d0ff;">
+<strong style="color:#d7ceff">
 متستسلمش من أول مسألة.
 </strong>
 
 </p>
 
 
-<div class="teacher-points">
+<div class="points">
 
-<div class="teacher-point">
+<div class="point">
 ✓ شرح بسيط ومباشر
 </div>
 
-<div class="teacher-point">
+<div class="point">
 ✓ تدريب بعد كل فكرة
 </div>
 
-<div class="teacher-point">
+<div class="point">
 ✓ ملفات ومراجعات
 </div>
 
-<div class="teacher-point">
+<div class="point">
 ✓ اختبارات تقيس مستواك
 </div>
 
@@ -2647,19 +2548,19 @@ alt="المستر أمير"
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
 
-
 </main>
 
 
-<!-- =========================
+<!-- ==============================
      FOOTER
-========================= -->
+============================== -->
 
 <footer>
 
@@ -2676,7 +2577,7 @@ class="brand"
 >
 
 <div class="logo">
-∑
+Σ
 </div>
 
 <div class="brand-text">
@@ -2694,9 +2595,11 @@ class="brand"
 </a>
 
 <p>
+
 منصة تعليم الرياضيات مع المستر أمير،
-تجمع الشرح والفيديوهات والملفات والتدريبات
-والاختبارات في مكان واحد.
+تجمع الشرح والفيديوهات والملفات
+والتدريبات والاختبارات في مكان واحد.
+
 </p>
 
 </div>
@@ -2738,7 +2641,7 @@ class="brand"
 </a>
 
 <a href="#">
-الإشعارات
+النتائج
 </a>
 
 </div>
@@ -2785,126 +2688,115 @@ class="brand"
 
 <script>
 
-
-/* =========================
+/* ==============================
    HEADER
-========================= */
+============================== */
 
 const header =
 document.getElementById("header");
 
 window.addEventListener(
 "scroll",
-()=>{
+function(){
 
     if(window.scrollY > 30){
 
-        header.classList.add("scrolled");
+        header.classList.add(
+            "scrolled"
+        );
 
     }else{
 
-        header.classList.remove("scrolled");
+        header.classList.remove(
+            "scrolled"
+        );
 
     }
 
 });
 
 
-/* =========================
+/* ==============================
    MOBILE MENU
-========================= */
+============================== */
 
 const mobileMenu =
 document.getElementById(
     "mobileMenu"
 );
 
-const mobileNav =
-document.getElementById(
-    "mobileNav"
-);
-
 mobileMenu.addEventListener(
 "click",
-()=>{
+function(){
 
-    mobileNav.classList.toggle(
-        "active"
+    const links =
+    document.querySelector(
+        ".nav-links"
     );
 
-    mobileMenu.textContent =
-        mobileNav.classList.contains(
-            "active"
-        )
-        ? "×"
-        : "☰";
+    if(
+        links.style.display ===
+        "flex"
+    ){
+
+        links.style.display =
+            "none";
+
+    }else{
+
+        links.style.display =
+            "flex";
+
+        links.style.position =
+            "fixed";
+
+        links.style.top =
+            "75px";
+
+        links.style.right =
+            "15px";
+
+        links.style.left =
+            "15px";
+
+        links.style.padding =
+            "15px";
+
+        links.style.flexDirection =
+            "column";
+
+        links.style.background =
+            "rgba(10,10,16,.97)";
+
+        links.style.borderRadius =
+            "15px";
+
+        links.style.border =
+            "1px solid rgba(255,255,255,.08)";
+    }
 
 });
 
 
-mobileNav
-.querySelectorAll("a")
-.forEach(
-link=>{
-
-    link.addEventListener(
-        "click",
-        ()=>{
-
-            mobileNav.classList.remove(
-                "active"
-            );
-
-            mobileMenu.textContent="☰";
-
-        }
-    );
-
-});
-
-
-/* =========================
-   EXPLORE COURSES
-========================= */
-
-document
-.getElementById("exploreCourses")
-.addEventListener(
-"click",
-function(event){
-
-    event.preventDefault();
-
-    document
-    .getElementById("courses")
-    .scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"start"
-
-    });
-
-});
-
-
-/* =========================
+/* ==============================
    SCROLL ANIMATION
-========================= */
+============================== */
 
-const animatedElements =
+const cards =
 document.querySelectorAll(
-    ".course-card, .feature-card, .stat-card, .motivation-box, .teacher-section"
+    ".quick-card, .course-card"
 );
 
 const observer =
 new IntersectionObserver(
-entries=>{
+function(entries){
 
     entries.forEach(
-    entry=>{
+    function(entry){
 
-        if(entry.isIntersecting){
+        if(
+            entry.isIntersecting
+        ){
 
             entry.target.classList.add(
                 "show"
@@ -2920,21 +2812,21 @@ entries=>{
 
 },
 {
-    threshold:.08
+    threshold:.1
 });
 
 
-animatedElements.forEach(
-element=>{
+cards.forEach(
+function(card){
 
-    observer.observe(element);
+    observer.observe(card);
 
 });
 
 
-/* =========================
+/* ==============================
    YEAR
-========================= */
+============================== */
 
 document.getElementById(
     "year"
@@ -2942,10 +2834,10 @@ document.getElementById(
 new Date().getFullYear();
 
 
-/* =====================================================
-   SUPABASE
+/* ==============================
+   DATABASE
 
-   هنربط قاعدة البيانات هنا لاحقًا:
+   لاحقًا مكان ربط Supabase:
 
    const SUPABASE_URL =
    "https://YOUR-PROJECT.supabase.co";
@@ -2953,23 +2845,20 @@ new Date().getFullYear();
    const SUPABASE_ANON_KEY =
    "YOUR-ANON-KEY";
 
-   البيانات التي سيتم جلبها:
+   ومن هنا هنجيب:
 
-   - الكورسات
-   - الدروس
-   - الفيديوهات
-   - ملفات PDF
-   - الاختبارات
-   - النتائج
-   - بيانات الطالب
-   - صورة الطالب
-   - نسبة المشاهدة
-   - الاشتراكات
+   الكورسات
+   الفيديوهات
+   PDF
+   الاختبارات
+   النتائج
+   بيانات الطلاب
+   صور الطلاب
+   نسبة المشاهدة
 
-===================================================== */
+============================== */
 
 </script>
 
 </body>
-
 </html>
