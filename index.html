@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>الخوارزمي | مع المستر أمير مفيش مستحيل</title>
 
@@ -52,6 +51,11 @@ a{
 button{
     font-family:inherit;
 }
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container{
     width:min(1180px,calc(100% - 30px));
@@ -207,8 +211,8 @@ header.scrolled{
 
 .hero{
     position:relative;
-    min-height:820px;
-    padding:150px 0 90px;
+    min-height:850px;
+    padding:130px 0 80px;
     display:flex;
     align-items:center;
     overflow:hidden;
@@ -217,24 +221,43 @@ header.scrolled{
 .hero::before{
     content:"";
     position:absolute;
-    width:650px;
-    height:650px;
-    left:-280px;
+    width:750px;
+    height:750px;
+    left:-300px;
     top:50%;
     transform:translateY(-50%);
     border-radius:50%;
-    background:radial-gradient(
-        circle,
-        rgba(112,72,245,.2),
-        transparent 68%
-    );
+    background:
+        radial-gradient(
+            circle,
+            rgba(112,72,245,.23),
+            transparent 68%
+        );
     filter:blur(25px);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    right:-250px;
+    top:-150px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(45,80,220,.13),
+            transparent 70%
+        );
+    filter:blur(20px);
 }
 
 .hero-content{
     position:relative;
-    z-index:5;
-    width:53%;
+    z-index:10;
+    width:47%;
+    margin-right:auto;
 }
 
 .badge{
@@ -282,12 +305,13 @@ header.scrolled{
 }
 
 .hero-highlight{
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #ad8cff,
-        #7193ff
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ad8cff,
+            #7193ff
+        );
 
     -webkit-background-clip:text;
     background-clip:text;
@@ -323,19 +347,24 @@ header.scrolled{
     color:#fff;
     font-size:12px;
     font-weight:800;
-    background:linear-gradient(
-        135deg,
-        #8257f5,
-        #365ee8
-    );
-    box-shadow:0 15px 40px rgba(91,65,220,.3);
+    background:
+        linear-gradient(
+            135deg,
+            #8257f5,
+            #365ee8
+        );
+    box-shadow:
+        0 15px 40px
+        rgba(91,65,220,.3);
     transition:.3s;
     cursor:pointer;
 }
 
 .primary-btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 20px 55px rgba(91,65,220,.45);
+    box-shadow:
+        0 20px 55px
+        rgba(91,65,220,.45);
 }
 
 .secondary-btn{
@@ -359,7 +388,8 @@ header.scrolled{
 
 
 /* =====================================================
-   TEACHER
+   TEACHER HERO
+   الصورة ناحية + الكلام جنبها
 ===================================================== */
 
 .teacher-hero{
@@ -372,41 +402,44 @@ header.scrolled{
 
     transform:translateY(-50%);
 
-    width:540px;
+    width:650px;
 
-    height:650px;
+    height:620px;
 
-    z-index:3;
+    z-index:5;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 }
+
+
+/* الإضاءة الخلفية */
 
 .teacher-glow{
 
     position:absolute;
 
-    width:500px;
+    width:530px;
 
-    height:500px;
-
-    top:20px;
+    height:530px;
 
     left:20px;
+
+    top:40px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(116,73,245,.3),
+            rgba(116,73,245,.34),
             transparent 68%
         );
 
-    filter:blur(12px);
+    filter:blur(20px);
 
     animation:
         glowMove 5s ease-in-out infinite;
@@ -424,21 +457,26 @@ header.scrolled{
 
 }
 
+
+/* الحلقة */
+
 .teacher-ring{
 
     position:absolute;
 
-    width:500px;
+    width:520px;
 
-    height:500px;
+    height:520px;
 
-    top:15px;
+    left:25px;
 
-    left:20px;
+    top:50px;
 
     border-radius:50%;
 
-    border:1px solid rgba(146,112,255,.22);
+    border:
+        1px solid
+        rgba(146,112,255,.22);
 
     animation:
         rotateRing 18s linear infinite;
@@ -462,7 +500,9 @@ header.scrolled{
 
     background:#a98cff;
 
-    box-shadow:0 0 22px #a98cff;
+    box-shadow:
+        0 0 22px
+        #a98cff;
 }
 
 @keyframes rotateRing{
@@ -479,24 +519,22 @@ header.scrolled{
 
 
 /* =====================================================
-   IMAGE + TEXT
+   الصورة والكلام جنب بعض
 ===================================================== */
 
-.teacher-image-box{
+.teacher-layout{
 
     position:relative;
 
-    z-index:5;
+    z-index:10;
 
-    width:450px;
+    width:620px;
 
     display:flex;
 
-    flex-direction:column;
-
     align-items:center;
 
-    gap:18px;
+    gap:25px;
 
     animation:
         floatTeacher 4s ease-in-out infinite;
@@ -512,47 +550,49 @@ header.scrolled{
 
     50%{
         transform:
-            translateY(-13px)
-            rotate(1deg);
+            translateY(-12px)
+            rotate(.7deg);
     }
 
 }
 
 
 /* =====================================================
-   SQUARE IMAGE
+   الصورة الكبيرة
 ===================================================== */
 
 .teacher-image{
 
     position:relative;
 
-    width:450px;
+    flex-shrink:0;
 
-    height:450px;
+    width:390px;
+
+    height:500px;
 
     overflow:hidden;
 
-    border-radius:28px;
+    border-radius:30px;
 
     background:
         linear-gradient(
             145deg,
-            #272047,
+            #29214c,
             #101322
         );
 
     border:
         2px solid
-        rgba(177,148,255,.35);
+        rgba(177,148,255,.38);
 
     box-shadow:
 
         0 35px 100px
-        rgba(0,0,0,.6),
+        rgba(0,0,0,.65),
 
-        0 0 80px
-        rgba(112,73,245,.28);
+        0 0 90px
+        rgba(112,73,245,.3);
 
     transition:
         transform .5s ease,
@@ -562,16 +602,16 @@ header.scrolled{
 .teacher-image:hover{
 
     transform:
-        translateY(-5px)
-        scale(1.02);
+        translateY(-7px)
+        scale(1.025);
 
     box-shadow:
 
-        0 45px 110px
-        rgba(0,0,0,.65),
+        0 45px 115px
+        rgba(0,0,0,.7),
 
-        0 0 100px
-        rgba(112,73,245,.38);
+        0 0 110px
+        rgba(112,73,245,.42);
 }
 
 .teacher-image img{
@@ -587,7 +627,7 @@ header.scrolled{
     object-position:center;
 
     transition:
-        transform .7s ease;
+        transform .8s ease;
 }
 
 .teacher-image:hover img{
@@ -597,7 +637,7 @@ header.scrolled{
 
 
 /* =====================================================
-   IMAGE SHINE
+   لمعة على الصورة
 ===================================================== */
 
 .teacher-image::after{
@@ -620,7 +660,7 @@ header.scrolled{
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.2),
+            rgba(255,255,255,.22),
             transparent
         );
 
@@ -644,44 +684,74 @@ header.scrolled{
 
 
 /* =====================================================
-   CAPTION UNDER IMAGE
+   الكلام بجانب الصورة
 ===================================================== */
 
 .teacher-caption{
 
-    position:relative;
+    width:205px;
 
-    width:450px;
+    padding:23px 17px;
 
-    padding:16px 20px;
+    border-radius:21px;
 
-    border-radius:17px;
-
-    text-align:center;
+    text-align:right;
 
     background:
-        rgba(10,10,16,.88);
+        linear-gradient(
+            145deg,
+            rgba(24,20,40,.94),
+            rgba(11,12,20,.9)
+        );
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(18px);
 
     border:
         1px solid
-        rgba(255,255,255,.09);
+        rgba(177,148,255,.15);
 
     box-shadow:
-        0 15px 45px
-        rgba(0,0,0,.3);
+        0 20px 55px
+        rgba(0,0,0,.4);
+}
+
+.teacher-caption::before{
+
+    content:"";
+
+    display:block;
+
+    width:38px;
+
+    height:3px;
+
+    border-radius:10px;
+
+    margin-bottom:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #956cff,
+            #4369ed
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(126,91,255,.6);
 }
 
 .teacher-caption strong{
 
     display:block;
 
-    font-size:20px;
+    font-size:25px;
 
     font-weight:900;
 
-    margin-bottom:5px;
+    line-height:1.4;
+
+    margin-bottom:12px;
 
     background:
         linear-gradient(
@@ -701,9 +771,29 @@ header.scrolled{
 
     display:block;
 
-    color:#bdb5d7;
+    color:#aaa4bb;
 
     font-size:11px;
+
+    line-height:2;
+
+}
+
+.teacher-caption .mini-quote{
+
+    display:block;
+
+    margin-top:17px;
+
+    padding-top:14px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    color:#d4caff;
+
+    font-size:10px;
 
     line-height:1.8;
 }
@@ -719,7 +809,7 @@ header.scrolled{
 
     z-index:20;
 
-    margin-top:-35px;
+    margin-top:-25px;
 }
 
 .stats-grid{
@@ -998,14 +1088,11 @@ section{
 }
 
 .course-body{
-
     padding:19px;
 }
 
 .course-body h3{
-
     font-size:16px;
-
     margin-bottom:7px;
 }
 
@@ -1530,31 +1617,30 @@ footer{
    RESPONSIVE
 ===================================================== */
 
-@media(max-width:1050px){
-
-    .hero-content{
-        width:60%;
-    }
+@media(max-width:1150px){
 
     .teacher-hero{
-        left:-80px;
-        opacity:.75;
+
+        left:-90px;
+
+        transform:
+            translateY(-50%)
+            scale(.9);
+    }
+
+    .hero-content{
+        width:50%;
     }
 
 }
 
-@media(max-width:800px){
+@media(max-width:900px){
 
-    .nav-links{
-        display:none;
-    }
+    .teacher-hero{
 
-    .mobile-menu{
-        display:block;
-    }
+        opacity:.25;
 
-    .hero{
-        min-height:800px;
+        left:-120px;
     }
 
     .hero-content{
@@ -1565,35 +1651,21 @@ footer{
     }
 
     .hero-description{
+
         margin-inline:auto;
     }
 
     .hero-buttons{
+
         justify-content:center;
     }
 
-    .teacher-hero{
-
-        left:50%;
-
-        transform:
-            translate(-50%,-50%);
-
-        width:500px;
-
-        opacity:.22;
+    .nav-links{
+        display:none;
     }
 
-    .teacher-image{
-
-        width:400px;
-
-        height:400px;
-    }
-
-    .teacher-caption{
-
-        width:400px;
+    .mobile-menu{
+        display:block;
     }
 
     .stats-grid{
@@ -1622,6 +1694,7 @@ footer{
     }
 
     .teacher-info p{
+
         margin-inline:auto;
     }
 
@@ -1633,73 +1706,47 @@ footer{
 
 }
 
-@media(max-width:560px){
 
-    .container{
-        width:calc(100% - 24px);
-    }
-
-    .nav{
-        min-height:70px;
-    }
-
-    .brand-text span{
-        display:none;
-    }
-
-    .login-btn{
-
-        padding:
-            9px 12px;
-
-        font-size:10px;
-    }
+@media(max-width:650px){
 
     .hero{
 
-        padding:
-            125px 0 70px;
+        min-height:780px;
+    }
+
+    .teacher-hero{
+
+        left:50%;
+
+        top:58%;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.7);
+
+        opacity:.18;
+    }
+
+    .hero-content{
+
+        position:relative;
+
+        z-index:20;
     }
 
     .hero h1{
 
-        font-size:40px;
-
-        letter-spacing:-1px;
+        font-size:42px;
     }
 
-    .hero-description{
+    .courses-grid,
+    .features-grid{
 
-        font-size:12px;
-    }
-
-    .primary-btn,
-    .secondary-btn{
-
-        width:100%;
-    }
-
-    section{
-        padding:75px 0;
-    }
-
-    .stats-grid{
-        gap:8px;
-    }
-
-    .stat-card{
-        padding:17px 12px;
-    }
-
-    .stat-card strong{
-        font-size:20px;
-    }
-
-    .stat-card span{
-        font-size:9px;
+        grid-template-columns:1fr;
     }
 
     .section-head{
+
         display:block;
     }
 
@@ -1710,16 +1757,82 @@ footer{
         margin-top:13px;
     }
 
-    .courses-grid,
-    .features-grid{
+}
 
-        grid-template-columns:1fr;
+
+@media(max-width:480px){
+
+    .container{
+
+        width:
+            calc(100% - 22px);
+    }
+
+    .hero{
+
+        padding-top:115px;
+    }
+
+    .hero h1{
+
+        font-size:37px;
+
+        letter-spacing:-1px;
+    }
+
+    .hero-description{
+
+        font-size:11px;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+    }
+
+    .teacher-hero{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.55);
+
+        top:57%;
+    }
+
+    .stats-grid{
+
+        gap:8px;
+    }
+
+    .stat-card{
+
+        padding:17px 10px;
+    }
+
+    .stat-card strong{
+
+        font-size:20px;
+    }
+
+    .stat-card span{
+
+        font-size:9px;
+    }
+
+    section{
+
+        padding:75px 0;
     }
 
     .motivation-box{
 
-        padding:
-            32px 21px;
+        padding:32px 20px;
     }
 
     .teacher-section-image{
@@ -1753,48 +1866,14 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .teacher-hero{
-
-        width:390px;
-    }
-
-    .teacher-image{
-
-        width:340px;
-
-        height:340px;
-
-        border-radius:23px;
-    }
-
-    .teacher-caption{
-
-        width:340px;
-
-        padding:
-            13px 15px;
-    }
-
-    .teacher-caption strong{
-
-        font-size:17px;
-    }
-
-    .teacher-caption span{
-
-        font-size:9px;
-    }
-
 }
 
 
 /* =====================================================
-   SUPABASE PLACEHOLDER
+   SUPABASE
 =====================================================
 
-   في الخطوة القادمة نربط قاعدة البيانات هنا.
-
-   مثال:
+   هنا مكان ربط قاعدة البيانات:
 
    const SUPABASE_URL =
    "https://YOUR-PROJECT.supabase.co";
@@ -1802,14 +1881,16 @@ footer{
    const SUPABASE_ANON_KEY =
    "YOUR-ANON-KEY";
 
-   وبعد الربط:
+   سيتم لاحقًا جلب:
 
-   الأدمن يضيف الكورسات
-   الأدمن يضيف الفيديوهات
-   الأدمن يضيف ملفات PDF
-   الأدمن يضيف الاختبارات
-
-   والطالب يشاهد المحتوى تلقائيًا.
+   - الكورسات
+   - الفيديوهات
+   - ملفات PDF
+   - الاختبارات
+   - النتائج
+   - بيانات الطالب
+   - صورة الطالب
+   - تقدم الطالب
 
 ===================================================== */
 
@@ -1830,6 +1911,7 @@ footer{
 <div class="container">
 
 <nav class="nav">
+
 
 <a href="#home" class="brand">
 
@@ -1931,10 +2013,15 @@ id="mobileNav"
 
 
 <!-- =====================================================
-     HERO
+     MAIN
 ===================================================== -->
 
 <main id="home">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -2007,7 +2094,7 @@ class="secondary-btn"
 
 
 <!-- =====================================================
-     TEACHER IMAGE
+     TEACHER
 ===================================================== -->
 
 <div class="teacher-hero">
@@ -2016,7 +2103,11 @@ class="secondary-btn"
 
 <div class="teacher-ring"></div>
 
-<div class="teacher-image-box">
+
+<div class="teacher-layout">
+
+
+<!-- الصورة -->
 
 <div class="teacher-image">
 
@@ -2033,7 +2124,7 @@ this.parentElement.innerHTML +=
 </div>
 
 
-<!-- الكلام تحت الصورة -->
+<!-- الكلام بجانب الصورة -->
 
 <div class="teacher-caption">
 
@@ -2042,10 +2133,15 @@ this.parentElement.innerHTML +=
 </strong>
 
 <span>
-مدرسك معاك... خطوة بخطوة لحد ما توصل 💜
+مدرسك معاك خطوة بخطوة، من أول فكرة لحد أصعب مسألة.
+</span>
+
+<span class="mini-quote">
+«مفيش مستحيل... طول ما أنت مكمل.» 💜
 </span>
 
 </div>
+
 
 </div>
 
@@ -2066,6 +2162,7 @@ this.parentElement.innerHTML +=
 <div class="container">
 
 <div class="stats-grid">
+
 
 <div class="stat-card">
 
@@ -2118,6 +2215,7 @@ this.parentElement.innerHTML +=
 
 </div>
 
+
 </div>
 
 </div>
@@ -2132,6 +2230,7 @@ this.parentElement.innerHTML +=
 <section id="courses">
 
 <div class="container">
+
 
 <div class="section-head">
 
@@ -2344,6 +2443,7 @@ class="features"
 >
 
 <div class="container">
+
 
 <div class="section-head">
 
@@ -2591,8 +2691,6 @@ alt="المستر أمير"
 متستسلمش من أول مسألة.
 </strong>
 
-الغلط جزء من التعلم، والمحاولة التانية هي اللي بتفرق.
-
 </p>
 
 
@@ -2624,6 +2722,7 @@ alt="المستر أمير"
 
 </section>
 
+
 </main>
 
 
@@ -2636,6 +2735,7 @@ alt="المستر أمير"
 <div class="container">
 
 <div class="footer-grid">
+
 
 <div class="footer-brand">
 
@@ -2732,6 +2832,7 @@ class="brand"
 </a>
 
 </div>
+
 
 </div>
 
@@ -2837,12 +2938,9 @@ function(event){
 
     event.preventDefault();
 
-    const courses =
-        document.getElementById(
-            "courses"
-        );
-
-    courses.scrollIntoView({
+    document
+    .getElementById("courses")
+    .scrollIntoView({
 
         behavior:"smooth",
 
@@ -2908,10 +3006,9 @@ new Date().getFullYear();
 
 
 /* =====================================================
-   DATABASE - SUPABASE
-=====================================================
+   SUPABASE DATABASE
 
-   هنا سيتم ربط قاعدة البيانات لاحقًا.
+   هنا سنضع كود ربط قاعدة البيانات لاحقًا.
 
    const SUPABASE_URL =
    "https://YOUR-PROJECT.supabase.co";
@@ -2919,19 +3016,7 @@ new Date().getFullYear();
    const SUPABASE_ANON_KEY =
    "YOUR-ANON-KEY";
 
-   وبعد الربط سيتم جلب:
-
-   1- الكورسات
-   2- الفيديوهات
-   3- ملفات PDF
-   4- الاختبارات
-   5- النتائج
-   6- بيانات الطلاب
-   7- صور الطلاب
-   8- تقدم الطالب
-
 ===================================================== */
-
 
 </script>
 
